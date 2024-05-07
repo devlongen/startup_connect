@@ -1,3 +1,31 @@
+-- Criar o banco de dados se não existir e usá-lo
+CREATE DATABASE IF NOT EXISTS startup_connect;
+USE startup_connect;
+
+-- Tabela de termos e condições
+CREATE TABLE termo_condicao (
+    idtermos_condicao INT NOT NULL AUTO_INCREMENT, -- ID do termo de condição
+    status_projeto VARCHAR(45) NOT NULL, -- Status do projeto
+    PRIMARY KEY (idtermos_condicao) -- Chave primária
+);
+
+-- Tabela de log de projetos
+CREATE TABLE log_projeto (
+    idlog_projeto INT NOT NULL AUTO_INCREMENT, -- ID do log do projeto
+    data_hora_acessada DATETIME NOT NULL, -- Data e hora de acesso
+    descricao_log VARCHAR(80) NOT NULL, -- Descrição do log
+    status_log VARCHAR(20) NOT NULL, -- Status do log
+    idusuario INT NOT NULL, -- ID do usuário associado ao log
+    PRIMARY KEY (idlog_projeto) -- Chave primária
+);
+
+-- Tabela de tipos de usuário
+CREATE TABLE tipo_usuario (
+    idtipo_usuario INT NOT NULL AUTO_INCREMENT, -- ID do tipo de usuário
+    status_usuario VARCHAR(45), -- Status do usuário
+    PRIMARY KEY (idtipo_usuario) -- Chave primária
+);
+
 -- Tabela de usuários
 CREATE TABLE usuario (
     idusuario INT NOT NULL AUTO_INCREMENT, -- ID do usuário
@@ -11,34 +39,6 @@ CREATE TABLE usuario (
     fk_idtipo_usuario INT, -- Chave estrangeira para o tipo de usuário
     PRIMARY KEY (idusuario), -- Chave primária
     FOREIGN KEY (fk_idtipo_usuario) REFERENCES tipo_usuario(idtipo_usuario) -- Chave estrangeira da tabela tipo_usuario
-);
-
--- Tabela de tipos de usuário
-CREATE TABLE tipo_usuario (
-    idtipo_usuario INT NOT NULL AUTO_INCREMENT, -- ID do tipo de usuário
-    status_usuario VARCHAR(45), -- Status do usuário
-    fk_usuario INT, -- Chave estrangeira para o usuário
-    PRIMARY KEY (idtipo_usuario), -- Chave primária
-    FOREIGN KEY (fk_usuario) REFERENCES usuario(idusuario) -- Chave estrangeira da tabela usuario
-);
-
--- Tabela de termos e condições
-CREATE TABLE termo_condicao (
-    idtermos_condicao INT NOT NULL AUTO_INCREMENT, -- ID do termo de condição
-    status_projeto VARCHAR(45) NOT NULL, -- Status do projeto
-    fk_projeto INT, -- Chave estrangeira para o projeto
-    PRIMARY KEY (idtermos_condicao), -- Chave primária
-    FOREIGN KEY (fk_projeto) REFERENCES projeto(idprojeto) -- Chave estrangeira da tabela projeto
-);
-
--- Tabela de log de projetos
-CREATE TABLE log_projeto (
-    idlog_projeto INT NOT NULL AUTO_INCREMENT, -- ID do log do projeto
-    data_hora_acessada DATETIME NOT NULL, -- Data e hora de acesso
-    descricao_log VARCHAR(80) NOT NULL, -- Descrição do log
-    status_log VARCHAR(20) NOT NULL, -- Status do log
-    idusuario INT NOT NULL, -- ID do usuário associado ao log
-    PRIMARY KEY (idlog_projeto) -- Chave primária
 );
 
 -- Tabela de projetos
