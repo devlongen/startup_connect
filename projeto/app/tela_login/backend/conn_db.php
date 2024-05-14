@@ -6,7 +6,7 @@ $dbPassword = '';              // Senha do banco de dados
 $dbDatabase =  'startup_connect';  // Nome do banco de dados
 
 // Tentativa de conexão com o banco de dados
-$conexao = new mysqli($dbDatabase, $dbHost, $dbPassword, $dbUser);
+$conexao = new mysqli($dbHost, $dbUser, $dbPassword, $dbDatabase);
 
 // // Verifica se houve erro na conexão
 // if ($conexao->connect_errno) {
