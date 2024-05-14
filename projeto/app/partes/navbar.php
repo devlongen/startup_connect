@@ -22,7 +22,7 @@
                         <a href="feature.html" class="dropdown-item">Quero captar</a>
                     </div>
                 </div>
-                <a href="dashboard/dashboard.php" class="nav-item nav-link">Contato</a>
+                <a href="dashboard/dashboard.php" class="nav-item nav-link">Perfil</a>
             </div>
 
         </div>
