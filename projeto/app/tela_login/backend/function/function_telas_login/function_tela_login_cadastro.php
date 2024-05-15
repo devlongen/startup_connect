@@ -47,6 +47,9 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
 // Função para verificar o login do usuário
 function verify_login_db($conexao, $email_login_db, $senha_login_db)
 {
+    // Inicia a sessão
+    session_start();
+
     // Prepara a consulta SQL para selecionar o usuário pelo email
     $stmt = $conexao->prepare("SELECT id_usuario, email_usuario, senha_usuario FROM usuario WHERE email_usuario = ?");
     // Verifica se a preparação da consulta falhou
@@ -54,10 +57,6 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
         echo "Erro ao preparar a consulta SQL: " . $conexao->error;
         return false;
     }
-
-    $id_usuario = "";
-    $email_usuario = "";
-    $senha_usuario = "";
 
     // Vincula o parâmetro à consulta SQL
     $stmt->bind_param("s", $email_login_db);
@@ -68,29 +67,24 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
         // Obtém o resultado da consulta
         $stmt->fetch();
         // Verifica se o usuário foi encontrado
-        if ($email_usuario !== "") {
+        if ($email_usuario !== null) {
             // Verifica se a senha fornecida corresponde à senha no banco de dados
             if (password_verify($senha_login_db, $senha_usuario)) {
-                // Se a senha estiver correta, cria um cookie de sessão
-                $token = gerarToken(); // Função para gerar um token de sessão único
-                setcookie('token', $token, time() + (86400 * 30), '/'); // Armazena o cookie por 30 dias
-
-                // Defina a sessão do usuário
+                // Se a senha estiver correta, define a sessão do usuário
                 $_SESSION['user_id'] = $id_usuario;
                 $_SESSION['email'] = $email_usuario;
 
                 // Redireciona o usuário para a página de perfil, por exemplo
-                if ($tipo_usuario == "fundador"){
-                    header('Location: fundador.php');
-                    exit();
-                }else{
-                    header('Location: investidor.php ');
-                }
+                header("Location: ../../../../");
+                exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
-                return false; // Senha incorreta
+                // Senha incorreta
+                echo "Senha incorreta";
+                return false;
             }
         } else {
-            echo "Usuário não encontrado"; // Usuário não encontrado
+            // Usuário não encontrado
+            echo "Usuário não encontrado";
             return false;
         }
     } else {
