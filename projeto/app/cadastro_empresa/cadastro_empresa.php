@@ -68,6 +68,19 @@
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
+                    <script>
+                            $(function () {
+                                // Summernote
+                                $('#summernote').summernote()
+
+                                // CodeMirror
+                                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                                mode: "htmlmixed",
+                                theme: "monokai"
+                                });
+                            })
+                    </script>
+
                    
 
                 </div>

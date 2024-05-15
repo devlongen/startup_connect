@@ -19,13 +19,6 @@ CREATE TABLE log_projeto (
     PRIMARY KEY (idlog_projeto) -- Chave primária
 );
 
--- Tabela de tipos de usuário
-CREATE TABLE tipo_usuario (
-    idtipo_usuario INT NOT NULL AUTO_INCREMENT, -- ID do tipo de usuário
-    status_usuario VARCHAR(45), -- Status do usuário
-    PRIMARY KEY (idtipo_usuario) -- Chave primária
-);
-
 -- Tabela de usuários
 CREATE TABLE usuario (
     idusuario INT NOT NULL AUTO_INCREMENT, -- ID do usuário
@@ -35,11 +28,9 @@ CREATE TABLE usuario (
     data_nascimento_usuario DATE NOT NULL, -- Data de nascimento do usuário
     genero_usuario VARCHAR(10) NOT NULL, -- Gênero do usuário
     email_usuario VARCHAR(256) NOT NULL, -- E-mail do usuário
-    senha_usuario VARCHAR(45) NOT NULL, -- Senha do usuário
-    fk_idtipo_usuario INT, -- Chave estrangeira para o tipo de usuário
+    senha_usuario VARCHAR(256) NOT NULL, -- Senha do usuário
+    status_usuario VARCHAR(30) NOT NULL, -- Status que usuário pertence
     PRIMARY KEY (idusuario), -- Chave primária
-    FOREIGN KEY (fk_idtipo_usuario) REFERENCES tipo_usuario(idtipo_usuario) -- Chave estrangeira da tabela tipo_usuario
-);
 
 -- Tabela de projetos
 CREATE TABLE projeto (
