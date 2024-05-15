@@ -56,20 +56,21 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Endereço</label>
+                        <label for="password">Data de abertura da empresa</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Endereço</label>
+                        <label for="password">Patrimônio Oferecido</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-
                     <div class="input-box">
-                        <label for="confirmPassword">Confirme sua Senha</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                        <label for="password">Meta total</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
+
+                   
 
                 </div>
 
