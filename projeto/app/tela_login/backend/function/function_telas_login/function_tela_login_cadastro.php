@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
     $cpf_cadastro_db = $_POST['cpf_insert_db'];
     $telefone_cadastro_db = $_POST['telefone_insert_db'];
     $data_cadastro_db = $_POST['data_de_nascimento_insert_db'];
+    $tipo_usuario = $_POST['fundador' ou];
     # Chama a função de inserção no banco de dados
     insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db);
 }
