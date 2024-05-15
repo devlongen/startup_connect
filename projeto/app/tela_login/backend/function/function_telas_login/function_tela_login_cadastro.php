@@ -35,8 +35,13 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
     $stmt->bind_param("sssssss", $nome_cadastro_db, $email_cadastro_db, $senha_hash, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario);
     # Executa a declaração SQL
     $stmt->execute();
-    # Redireciona para a tela inicial (se necessário)
-    # header("Location:tela inicial salvando login do usuario)
+    session_start();
+    $_SESSION['usuario'] = array(
+        'nome' => $nome_cadastro_db,
+        'email' => $email_cadastro_db,
+        'usuario' => $tipo_usuario
+    );
+    header("Location: ../../../../");
 }
 
 // Função para verificar o login do usuário
@@ -75,7 +80,7 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                 $_SESSION['email'] = $email_usuario;
 
                 // Redireciona o usuário para a página de perfil, por exemplo
-                if ($tipo_usuario == 0){
+                if ($tipo_usuario == "fundador"){
                     header('Location: fundador.php');
                     exit();
                 }else{
