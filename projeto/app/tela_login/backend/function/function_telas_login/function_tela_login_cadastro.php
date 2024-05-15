@@ -10,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
     $cpf_cadastro_db = $_POST['cpf_insert_db'];
     $telefone_cadastro_db = $_POST['telefone_insert_db'];
     $data_cadastro_db = $_POST['data_de_nascimento_insert_db'];
-    $tipo_usuario = $_POST['fundador'];
+    $tipo_usuario = $_POST['tipo_usuario'];
     # Chama a função de inserção no banco de dados
-    insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db);
+    insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario);
 }
 # Verifica se o formulário de login foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_db"])) {
@@ -25,14 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_db"])) {
 }
 
 # Função para inserir dados no banco de dados
-function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db)
+function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario)
 {
     # Criptografa a senha
     $senha_hash = password_hash($senha_cadastro_db, PASSWORD_DEFAULT);
     # Prepara a declaração SQL para inserir os dados
-    $stmt = $conexao->prepare("INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, cpf_usuario, telefone_usuario, data_nascimento_usuario) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conexao->prepare("INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, cpf_usuario, telefone_usuario, data_nascimento_usuario, status_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)");
     # Vincula os parâmetros à declaração SQL
-    $stmt->bind_param("ssssss", $nome_cadastro_db, $email_cadastro_db, $senha_hash, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db);
+    $stmt->bind_param("sssssss", $nome_cadastro_db, $email_cadastro_db, $senha_hash, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario);
     # Executa a declaração SQL
     $stmt->execute();
     # Redireciona para a tela inicial (se necessário)
