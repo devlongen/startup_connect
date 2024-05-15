@@ -12,7 +12,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="backend/function/function_telas_login/function_tela_login_cadastro.php" method="post" name="cadastro_db">
+            <form action="backend/function/insert_&&_verify.php" method="post" name="cadastro_db">
                 <h1>Criar uma conta</h1>
 
                 <input type="text" placeholder="Nome" name="nome_insert_db" required="true">
@@ -27,7 +27,7 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="backend/function/function_telas_login/function_tela_login_cadastro.php" method="post" name="login_db">
+            <form action="backend/function/insert_&&_verify.php" method="post" name="login_db">
                 <h1>Entrar</h1>
                 <input type="email" placeholder="Email" name="email_login_db" required="true">
                 <input type="password" placeholder="Senha" name="senha_login_db" required="true">
