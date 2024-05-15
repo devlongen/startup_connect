@@ -12,7 +12,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="summernote/summernote-bs4.min.css">
  
   
 </head>
@@ -934,7 +934,7 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- Summernote -->
-<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<script src="summernote/summernote-bs4.min.js"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
