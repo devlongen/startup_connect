@@ -20,9 +20,7 @@
                     <div class="title">
                         <h1>Cadastro da empresa</h1>
                     </div>
-                    <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
-                    </div>
+
                 </div>
 
                 <div class="input-group">
