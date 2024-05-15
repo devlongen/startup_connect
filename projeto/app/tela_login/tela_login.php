@@ -21,6 +21,8 @@
                 <input type="password" placeholder="Senha" name="senha_insert_db" required="true">
                 <input type="text" placeholder="Telefone" name="telefone_insert_db" required="true" maxlength="11">
                 <input type="date" name="data_de_nascimento_insert_db" required="true">
+                <input type="radio" name="fundador" id="tipo_usuario">Fundador 
+                <input type="radio" name="investidor" id="tipo_usuario">Investidor 
                 <button href="../app/index.php" name="cadastro_db">Criar</button>
             </form>
         </div>

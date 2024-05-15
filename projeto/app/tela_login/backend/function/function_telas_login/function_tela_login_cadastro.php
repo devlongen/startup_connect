@@ -42,29 +42,44 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
 function verify_login_db($conexao, $email_login_db, $senha_login_db)
 {
     // Prepara a consulta SQL para selecionar o usuário pelo email
-    $stmt = $conexao->prepare("SELECT email_usuario, senha_usuario FROM usuario WHERE email_usuario = ?");
+    $stmt = $conexao->prepare("SELECT id_usuario, email_usuario, senha_usuario FROM usuario WHERE email_usuario = ?");
     // Verifica se a preparação da consulta falhou
     if ($stmt === false) {
         echo "Erro ao preparar a consulta SQL: " . $conexao->error;
         return false;
     }
 
-    $email_usuario = ""; // Inicializa a variável $email_usuario com uma string vazia
-    $senha_usuario = ""; // Inicializa a variável $senha_usuario com uma string vazia
+    $id_usuario = "";
+    $email_usuario = "";
+    $senha_usuario = "";
 
     // Vincula o parâmetro à consulta SQL
     $stmt->bind_param("s", $email_login_db);
     // Executa a consulta SQL
     if ($stmt->execute()) {
         // Vincula o resultado da consulta a variáveis
-        $stmt->bind_result($email_usuario, $senha_usuario);
+        $stmt->bind_result($id_usuario, $email_usuario, $senha_usuario);
         // Obtém o resultado da consulta
         $stmt->fetch();
         // Verifica se o usuário foi encontrado
         if ($email_usuario !== "") {
             // Verifica se a senha fornecida corresponde à senha no banco de dados
             if (password_verify($senha_login_db, $senha_usuario)) {
-                return true; // Senha correta, login válido
+                // Se a senha estiver correta, cria um cookie de sessão
+                $token = gerarToken(); // Função para gerar um token de sessão único
+                setcookie('token', $token, time() + (86400 * 30), '/'); // Armazena o cookie por 30 dias
+
+                // Defina a sessão do usuário
+                $_SESSION['user_id'] = $id_usuario;
+                $_SESSION['email'] = $email_usuario;
+
+                // Redireciona o usuário para a página de perfil, por exemplo
+                if ($tipo_usuario == 0){
+                    header('Location: fundador.php');
+                    exit();
+                }else{
+                    header('Location: investidor.php ');
+                }
             } else {
                 return false; // Senha incorreta
             }
