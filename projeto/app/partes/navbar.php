@@ -11,15 +11,14 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="../categoria/menu.php" class="nav-item nav-link">Projetos</a>
                 <a href="tela_login/tela_login.php" class="nav-item nav-link">Login</a>
-                <a href="service.html" class="nav-item nav-link">Criar conta</a>
                 <div class="nav-item dropdown">
 
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
                     <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Quero investir</a>
-                        <a href="feature.html" class="dropdown-item">Quero captar</a>
+                        <a href="price.html" class="dropdown-item">Criar Startup</a>
+                        <a href="feature.html" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>
                 <a href="dashboard/dashboard.php" class="nav-item nav-link">Perfil</a>
@@ -36,8 +35,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Você pode começar Agora</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Invista em negócios Promissores</h1>
-                        <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Quero investir</a>
-                        <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero captar</a>
+                        <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>
@@ -47,8 +46,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Criação e Inovação</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Conectando sua startup com investidores</h1>
-                        <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Quero investir</a>
-                        <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero captar</a>
+                        <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>
