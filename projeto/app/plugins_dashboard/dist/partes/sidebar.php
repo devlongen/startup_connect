@@ -8,8 +8,9 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Hizrian
-                            <span class="user-level">Administrator</span>
+                            <?php include_once('../../../plugins_login/backend/function/session.php');?>
+                            <?php echo $_SESSION['usuario']['nome'];?>
+                            <span class="user-level"><?php echo $_SESSION['usuario']['status'];?></span>
                             <span class="caret"></span>
                         </span>
                     </a>

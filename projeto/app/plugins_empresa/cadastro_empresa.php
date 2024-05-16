@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+    
+
     
     <title>Formulário</title>
 </head>
@@ -15,6 +18,10 @@
         <!-- <div class="form-image">
             <img src="assets/img//undraw_shopping_re_3wst.svg" alt="">
         </div> -->
+        <div class="card-body">
+              
+        </div>
+
         <div class="form">
             <form action="#">
                 <div class="form-header">
@@ -29,6 +36,10 @@
                         <label for="firstname">Razão Social</label>
                         <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
                     </div>
+
+                    <textarea id="summernote">
+                Place <em>some</em> <u>text</u> <strong>here</strong>
+              </textarea>
 
                     <div class="input-box">
                         <label for="lastname">CNPJ</label>
@@ -100,12 +111,30 @@
                     </div>
                 </div>
 
+              
+
                 <div class="continue-button">
                     <button><a href="#">Continuar</a> </button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script src="../plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- CodeMirror -->
+    <script src="../../plugins/codemirror/codemirror.js"></script>
+    <script src="../../plugins/codemirror/mode/css/css.js"></script>
+    <script src="../../plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="../../plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
 
     <script>
                              $(function () {
