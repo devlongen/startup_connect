@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    
     <title>Formulário</title>
 </head>
 
@@ -67,21 +68,7 @@
                         <label for="password">Meta total</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
-
-                    <script>
-                            $(function () {
-                                // Summernote
-                                $('#summernote').summernote()
-
-                                // CodeMirror
-                                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                                mode: "htmlmixed",
-                                theme: "monokai"
-                                });
-                            })
-                    </script>
-
-                   
+              
 
                 </div>
 
@@ -119,6 +106,22 @@
             </form>
         </div>
     </div>
+
+    <script>
+                             $(function () {
+                                // Summernote
+                                $('#summernote').summernote()
+
+                                // CodeMirror
+                                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                                mode: "htmlmixed",
+                                theme: "monokai"
+                                });
+                            })
+        </script>
+
+
+
 </body>
 
 </html>
