@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/styles/styles.css">
     <link rel="stylesheet" href="src/styles/navbar.css">
+    <link rel="stylesheet" href="src/styles/menu.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -38,13 +39,14 @@
     <h2 class="section-title">Projetos</h2>
     <h3 class="section-subtitle">Fique por dentro das Novidades</h3>
 
+
     <div id="dishes">
         <div class="dish">
             <div class="dish-heart">
                 <i class=""></i>
             </div>
 
-            <img src="src/images/1.png" class="" alt="">
+            <img src="src/images/1.png" class="dish-image" alt="">
 
             <h3 class="dish-title">
                 Jogos do Momento
@@ -66,10 +68,11 @@
             <div class="dish-price">
                 <h4> </h4>
                 <button class="btn-default">
-                    <i class="">Saiba mais</i>
+                    <i>SAIBA MAIS</i>
                 </button>
             </div>
         </div>
+       
 
         <div class="dish">
             <div class="dish-heart">
@@ -98,7 +101,7 @@
             <div class="dish-price">
                 <h4> </h4>
                 <button class="btn-default">
-                    <i class="">Saiba mais</i>
+                    <i>SAIBA MAIS</i>
                 </button>
             </div>
         </div>
@@ -130,7 +133,7 @@
             <div class="dish-price">
                 <h4> </h4>
                 <button class="btn-default">
-                    <i class="">Saiba mais</i>
+                    <i>SAIBA MAIS</i>
                 </button>
             </div>
         </div>
@@ -141,7 +144,7 @@
                     <i class=""></i>
                 </div>
 
-                <img src="src/images/1.png" class="" alt="">
+                <img src="src/images/1.png" class="dish-image" alt="">
 
                 <h3 class="dish-title">
                     Jogos do Momento
@@ -161,12 +164,12 @@
                 </div>
 
                 <div class="dish-price">
-                    <h4> </h4>
-                    <button class="btn-default">
-                        <i class="">Saiba mais</i>
-                    </button>
-                </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>SAIBA MAIS</i>
+                </button>
             </div>
+        </div>
 
             <div class="dish">
                 <div class="dish-heart">
@@ -193,12 +196,12 @@
                 </div>
 
                 <div class="dish-price">
-                    <h4> </h4>
-                    <button class="btn-default">
-                        <i class="">Saiba mais</i>
-                    </button>
-                </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>Saiba MAIS</i>
+                </button>
             </div>
+        </div>
 
             <div class="dish">
                 <div class="dish-heart">
@@ -225,12 +228,12 @@
                 </div>
 
                 <div class="dish-price">
-                    <h4> </h4>
-                    <button class="btn-default">
-                        <i class="">Saiba mais</i>
-                    </button>
-                </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>Saiba MAIS</i>
+                </button>
             </div>
+        </div>
 
             <div id="dishes">
                 <div class="dish">
@@ -238,7 +241,7 @@
                         <i class=""></i>
                     </div>
 
-                    <img src="src/images/1.png" class="" alt="">
+                    <img src="src/images/1.png" class="dish-image" alt="">
 
                     <h3 class="dish-title">
                         Jogos do Momento
@@ -258,12 +261,12 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4> </h4>
-                        <button class="btn-default">
-                            <i class="">Saiba mais</i>
-                        </button>
-                    </div>
-                </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>Saiba MAIS</i>
+                </button>
+            </div>
+        </div>
 
                 <div class="dish">
                     <div class="dish-heart">
@@ -290,12 +293,12 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4> </h4>
-                        <button class="btn-default">
-                            <i class="">Saiba mais</i>
-                        </button>
-                    </div>
-                </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>Saiba MAIS</i>
+                </button>
+            </div>
+        </div>
 
                 <div class="dish">
                     <div class="dish-heart">
@@ -322,12 +325,12 @@
                     </div>
 
                     <div class="dish-price">
-                        <h4> </h4>
-                        <button class="btn-default">
-                            <i class="">Saiba mais</i>
-                        </button>
-                    </div>
-                </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>SAIBA MAIS</i>
+                </button>
+            </div>
+        </div>
 
                 <div id="dishes">
                     <div class="dish">
@@ -335,7 +338,7 @@
                             <i class=""></i>
                         </div>
 
-                        <img src="src/images/1.png" class="" alt="">
+                        <img src="src/images/1.png" class="dish-image" alt="">
 
                         <h3 class="dish-title">
                             Jogos do Momento
@@ -355,12 +358,12 @@
                         </div>
 
                         <div class="dish-price">
-                            <h4> </h4>
-                            <button class="btn-default">
-                                <i class="">Saiba mais</i>
-                            </button>
-                        </div>
-                    </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>SAIBA MAIS</i>
+                </button>
+            </div>
+        </div>
 
                     <div class="dish">
                         <div class="dish-heart">
@@ -387,12 +390,12 @@
                         </div>
 
                         <div class="dish-price">
-                            <h4> </h4>
-                            <button class="btn-default">
-                                <i class="">Saiba mais</i>
-                            </button>
-                        </div>
-                    </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>SAIBA MAIS</i>
+                </button>
+            </div>
+        </div>
 
                     <div class="dish">
                         <div class="dish-heart">
@@ -419,12 +422,13 @@
                         </div>
 
                         <div class="dish-price">
-                            <h4> </h4>
-                            <button class="btn-default">
-                                <i class="">Saiba mais</i>
-                            </button>
-                        </div>
-                    </div>
+                <h4> </h4>
+                <button class="btn-default">
+                    <i>SAIBA MAIS</i>
+                </button>
+            </div>
+        </div>
+
 
 </section>
 

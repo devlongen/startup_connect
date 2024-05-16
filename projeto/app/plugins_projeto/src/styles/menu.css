@@ -1,9 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 #menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+
+.menu-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 #dishes {
@@ -22,10 +34,20 @@
     gap: 18px;
     width: 25%;
     padding: 20px;
-    background-color: var(--color-neutral-0);
+    background-color: #f9f9f9;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+}
+
+.dish img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.dish-name {
+    font-size: 24px;
+    color: #333;
 }
 
 .dish-description {
@@ -55,7 +77,51 @@
         width: 100%;
     }
 
-    #menu .section-subtitle {
+    .menu-title {
+        font-size: 28px;
         text-align: center;
+    }
+}
+
+/* Estilos para o título */
+#menu .section-title {
+    font-size: 32px; /* Tamanho maior do texto */
+    font-weight: bold;
+    color: rgb(11, 76, 255); /* Cor do texto */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Transformar texto em maiúsculas */
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+    cursor: pointer; /* Mudar o cursor ao passar o mouse */
+}
+
+#menu .section-title:hover {
+    color: rgb(0, 128, 255); /* Cor alterada ao passar o mouse */
+}
+
+/* Estilos para o título */
+#menu .section-title {
+    font-size: 48px; /* Tamanho grande do texto */
+    font-weight: bold;
+    color: rgb(11, 76, 255); /* Cor do texto */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Transformar texto em maiúsculas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra do texto */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+/* Estilos para o subtítulo */
+#menu .section-subtitle {
+    font-size: 24px; /* Tamanho do texto do subtítulo */
+    color: rgb(11, 76, 255); /* Cor do texto */
+    margin-bottom: 20px; /* Espaço abaixo do subtítulo */
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    #menu .section-title {
+        font-size: 36px; /* Tamanho do texto ajustado para telas menores */
+    }
+    #menu .section-subtitle {
+        font-size: 20px; /* Tamanho do texto ajustado para telas menores */
     }
 }
