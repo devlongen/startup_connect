@@ -2,7 +2,7 @@
 # Verifica se o formulário de cadastro foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
     # Inclui o arquivo de conexão com o banco de dados
-    include_once('../../conn_db.php');
+    include_once('../conn_db.php');
     # Recupera os dados do formulário de cadastro
     $nome_cadastro_db = $_POST['nome_insert_db'];
     $email_cadastro_db = $_POST['email_insert_db'];
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
 }
 # Verifica se o formulário de login foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_db"])) {
-    require_once('../../conn_db.php');
+    require_once('../conn_db.php');
     # Recupera os dados do formulário de login
     $email_login_db = $_POST['email_login_db'];
     $senha_login_db = $_POST['senha_login_db'];
