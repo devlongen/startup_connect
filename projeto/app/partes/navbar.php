@@ -8,14 +8,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-<<<<<<< HEAD
-                <a href="plugins_projeto\projeto.php" class="nav-item nav-link">Projetos</a>
-                <a href="plugins_login/tela_login/tela_login.php" class="nav-item nav-link">Login</a>
-=======
-                <a href="../categoria/menu.php" class="nav-item nav-link">Projetos</a>
+                <a href="" class="nav-item nav-link active">Home</a>
+                <a href="plugins_projeto/projeto.php" class="nav-item nav-link">Projetos</a>
                 <a href="plugins_login/tela_login.php" class="nav-item nav-link">Login</a>
->>>>>>> b8e7d2327153ca87b9cd5bc54bb2d3279d6097da
+
                 <div class="nav-item dropdown">
 
                 </div>
@@ -23,7 +19,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
                     <div class="dropdown-menu m-0">
                         <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
-                        <a href="plugins_projeto/index.html" class="dropdown-item">Quero investir</a>
+                        <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>
                 <a href="plugins_dashboard/dashboard.php" class="nav-item nav-link">Perfil</a>
