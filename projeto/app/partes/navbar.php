@@ -10,7 +10,7 @@
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="../categoria/menu.php" class="nav-item nav-link">Projetos</a>
-                <a href="plugins_login/tela_login/tela_login.php" class="nav-item nav-link">Login</a>
+                <a href="plugins_login/tela_login.php" class="nav-item nav-link">Login</a>
                 <div class="nav-item dropdown">
 
                 </div>
