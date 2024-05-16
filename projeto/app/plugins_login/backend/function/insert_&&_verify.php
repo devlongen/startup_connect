@@ -1,4 +1,5 @@
 <?php
+ session_start();
 # Verifica se o formulário de cadastro foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
     # Inclui o arquivo de conexão com o banco de dados
@@ -46,13 +47,14 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
     $stmt->bind_param("sssssss", $nome_cadastro_db, $email_cadastro_db, $senha_hash, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario_db);
     # Executa a declaração SQL
     $stmt->execute();
-    $nome_sessao = $nome_cadastro_db;
-    $status_sessao = $tipo_usuario_db;
-    if ($tipo_usuario == "fundador"){
-
+    $_SESSION['usuario'] = array(
+        'nome' => $nome_cadastro_db,
+        'status' => $tipo_usuario_db
+    );
+    if ($_SESSION['usuario']['status'] == "Fundador"){
         header("Location: ../../../plugins_empresa/cadastro_empresa.php");
     }else{
-        header("Location: ../../../plugins_projeto/index.html");
+        header("Location: ../../../plugins_projeto/projeto.php");
     }
 }
 
@@ -81,14 +83,14 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
             // Verifica se a senha fornecida corresponde à senha no banco de dados
             if (password_verify($senha_login_db, $senha_usuario)) {
                 // Se a senha estiver correta, define a sessão do usuário
-                $nome_sessao = $nome_usuario;
-                $status_sessao = $tipo_usuario;
-                // Redireciona o usuário para a página de perfil, por exemplo
-                if ($tipo_usuario == "fundador"){
-
+                $_SESSION['usuario'] = array(
+                    'nome' => $nome_usuario,
+                    'status' => $tipo_usuario
+                );
+                if ($_SESSION['usuario']['status'] == "Fundador"){
                     header("Location: ../../../plugins_dashboard/dashboard.php");
                 }else{
-                    header("Location: ../../../plugins_projeto/index.html");
+                    header("Location: ../../../plugins_projeto/projeto.php");
                 }
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
