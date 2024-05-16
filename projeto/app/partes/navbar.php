@@ -18,7 +18,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
                     <div class="dropdown-menu m-0">
-                        <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
+                        <a href="plugins_empresa/editors.php" class="dropdown-item">Criar Startup</a>
                         <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>

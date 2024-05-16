@@ -1,114 +1,109 @@
-/* Importações de fontes e estilos */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('menu.css');
-
-/* Variáveis de cores */
-:root {
-    --color-primary-1: #fffefb;
-    --color-primary-2: #fffefb;
-    --color-primary-3: #0059ff;
-    --color-primary-4: #0059ff;
-    --color-primary-5: #0059ff;
-    --color-primary-6: #0059ff;
-
-    --color-neutral-0: #fff;
-    --color-neutral-1: #1d1d1d;
-}
-
 /* Estilos globais */
 * {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--color-primary-1);
+    font-family: Arial, sans-serif;
 }
 
-/* Estilos para as seções */
-section {
-    padding: 20px 8%; /* Reduzindo o padding */
-    max-width: 1200px; /* Limitando a largura máxima */
-    margin: 0 auto; /* Centralizando as seções */
-}
-
-/* Botões */
-.btn-default {
-    border: none;
+.aba-pesquisa {
+    width: 100%;
+    max-width: 400px; /* Largura máxima da barra de pesquisa */
+    margin: 30px auto; /* Ajuste a margem superior conforme necessário */
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: var(--color-primary-5);
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-weight: 600;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.aba-pesquisa__input {
+    flex: 1;
+    height: 28px;
+    padding: 0 8px;
+    border: #13678a solid 2px;
+    border-radius: 14px;
+}
+
+.aba-pesquisa__lupa {
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    transition: background-color .3s ease;
+    margin-left: 8px;
 }
 
-.btn-default:hover {
-    background-color: var(--color-primary-3);
+/* Estilos para a seção de projetos */
+#menu {
+    padding: 20px;
 }
 
-/* Ícones de redes sociais */
-.social-media-buttons {
-    display: flex;
-    gap: 18px;
-}
-
-.social-media-buttons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 40px;
-    background-color: var(--color-neutral-0);
-    font-size: 1.25rem;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--color-neutral-1);;
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow .3s ease;
-}
-
-.social-media-buttons a:hover {
-    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Títulos e subtítulos das seções */
 .section-title {
-    color: var(--color-primary-6);
-    font-size: 1.563rem;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .section-subtitle {
-    font-size: 2.1875rem;
-} 
-
-/* Imagens */
-img {
-    max-width: 100%; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto;
-}
-
-/* Estilos para os grupos de projetos */
-.project-group {
+    text-align: center;
     margin-bottom: 30px;
-    display: flex; /* Exibir os projetos lado a lado */
-    justify-content: center; /* Centralizar os projetos horizontalmente */
 }
 
 /* Estilos para os pratos (projetos) */
-.dish {
-    margin: 0 10px; /* Espaçamento entre os projetos */
-    max-width: 250px; /* Limitando a largura máxima dos projetos */
+#dishes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
+
+.dish {
+    width: calc(33.33% - 20px); /* 3 pratos por linha com espaçamento */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .dish {
+        width: calc(50% - 20px); /* 2 pratos por linha em telas menores */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dish {
+        width: calc(100% - 20px); /* 1 prato por linha em telas ainda menores */
+    }
+}
+
+.dish-image{
+    width: 500px;
+}
+
+.btn-default {
+    background-color: #0d40e7; /* Cor de fundo verde */
+    border: none;
+    color: white;
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px; /* Borda arredondada */
+}
+
+.btn-default:hover {
+    background-color: #3da142; /* Mudança de cor ao passar o mouse */
+}
+
+/* Estilos adicionais para tornar o botão responsivo */
+@media screen and (max-width: 600px) {
+    .btn-default {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+    }
+}
+
