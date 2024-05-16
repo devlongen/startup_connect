@@ -27,6 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_db"])) {
 # Função para inserir dados no banco de dados
 function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario_db)
 {
+    // Verifica se o email já existe no banco de dados
+    $stmt = $conexao->prepare("SELECT idusuario FROM usuario WHERE email_usuario = ?");
+    $stmt->bind_param("s", $email_cadastro_db);
+    $stmt->execute();
+    $stmt->store_result();
+
+    // Se já existir um registro com o mesmo email, exiba uma mensagem de erro
+    if ($stmt->num_rows > 0) {
+        echo "Este email já está cadastrado.";
+        return false;
+    }
     # Criptografa a senha
     $senha_hash = password_hash($senha_cadastro_db, PASSWORD_DEFAULT);
     # Prepara a declaração SQL para inserir os dados
@@ -35,23 +46,22 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
     $stmt->bind_param("sssssss", $nome_cadastro_db, $email_cadastro_db, $senha_hash, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario_db);
     # Executa a declaração SQL
     $stmt->execute();
-    session_start();
-    $_SESSION['usuario'] = array(
-        'nome' => $nome_cadastro_db,
-        'email' => $email_cadastro_db,
-        'usuario' => $tipo_usuario_db
-    );
-    header("Location: ../../../");
+    $nome_sessao = $nome_cadastro_db;
+    $status_sessao = $tipo_usuario_db;
+    if ($tipo_usuario == "fundador"){
+
+        header("Location: ../../../plugins_empresa/cadastro_empresa.php");
+    }else{
+        header("Location: ../../../plugins_projeto/index.html");
+    }
 }
 
 // Função para verificar o login do usuário
 function verify_login_db($conexao, $email_login_db, $senha_login_db)
 {
-    // Inicia a sessão
-    session_start();
 
     // Prepara a consulta SQL para selecionar o usuário pelo email
-    $stmt = $conexao->prepare("SELECT idusuario, email_usuario, senha_usuario, status_usuario FROM usuario WHERE email_usuario = ?");
+    $stmt = $conexao->prepare("SELECT idusuario, nome_usuario, email_usuario, senha_usuario, status_usuario FROM usuario WHERE email_usuario = ?");
     // Verifica se a preparação da consulta falhou
     if ($stmt === false) {
         echo "Erro ao preparar a consulta SQL: " . $conexao->error;
@@ -63,7 +73,7 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
     // Executa a consulta SQL
     if ($stmt->execute()) {
         // Vincula o resultado da consulta a variáveis
-        $stmt->bind_result($id_usuario, $email_usuario, $senha_usuario, $tipo_usuario_db);
+        $stmt->bind_result($id_usuario,$nome_usuario, $email_usuario, $senha_usuario, $tipo_usuario);
         // Obtém o resultado da consulta
         $stmt->fetch();
         // Verifica se o usuário foi encontrado
@@ -71,12 +81,15 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
             // Verifica se a senha fornecida corresponde à senha no banco de dados
             if (password_verify($senha_login_db, $senha_usuario)) {
                 // Se a senha estiver correta, define a sessão do usuário
-                $_SESSION['user_id'] = $id_usuario;
-                $_SESSION['email'] = $email_usuario;
-                $_SESSION['usuario'] = $tipo_usuario_db;
-
+                $nome_sessao = $nome_usuario;
+                $status_sessao = $tipo_usuario;
                 // Redireciona o usuário para a página de perfil, por exemplo
-                header("Location: ../../../");
+                if ($tipo_usuario == "fundador"){
+
+                    header("Location: ../../../plugins_dashboard/dashboard.php");
+                }else{
+                    header("Location: ../../../plugins_projeto/index.html");
+                }
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
                 // Senha incorreta
