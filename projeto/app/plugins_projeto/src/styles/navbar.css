@@ -1,0 +1,35 @@
+/* Estilo da barra de pesquisa */
+.aba-pesquisa {
+    width: 400px;
+    height: 28px;
+    padding: 0 8px;
+    border: #13678a solid 2px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin: 30px auto; /* Ajuste a margem superior conforme necessário */
+}
+
+
+.aba-pesquisa__input {
+    font: 300 12px "Inter", sans-serif;
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+}
+
+/* Estilo da lupa de pesquisa */
+.aba-pesquisa__lupa {
+    width: 20px;
+    height: 20px;
+    filter: invert(30%) sepia(100%) saturate(7439%) hue-rotate(189deg) brightness(90%) contrast(98%);
+}
+
+.aba-pesquisa__lupa:hover {
+    cursor: pointer;
+}
+
+
