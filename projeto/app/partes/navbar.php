@@ -17,8 +17,8 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
                     <div class="dropdown-menu m-0">
-                        <a href="cadastro_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
-                        <a href="feature.html" class="dropdown-item">Quero investir</a>
+                        <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
+                        <a href="plugins_projeto/index.html" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>
                 <a href="plugins_dashboard/dashboard.php" class="nav-item nav-link">Perfil</a>
@@ -35,8 +35,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Você pode começar Agora</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Invista em negócios Promissores</h1>
-                        <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
-                        <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                        <a href="plugins_empresa/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="plugins_projeto/index.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>

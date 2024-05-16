@@ -41,7 +41,7 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
         'email' => $email_cadastro_db,
         'usuario' => $tipo_usuario_db
     );
-    header("Location: ../../../../");
+    header("Location: ../../../");
 }
 
 // Função para verificar o login do usuário
@@ -76,7 +76,7 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                 $_SESSION['usuario'] = $tipo_usuario_db;
 
                 // Redireciona o usuário para a página de perfil, por exemplo
-                header("Location: ../../../../");
+                header("Location: ../../../");
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
                 // Senha incorreta
