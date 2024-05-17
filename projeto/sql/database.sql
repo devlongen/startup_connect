@@ -3,14 +3,14 @@ CREATE DATABASE IF NOT EXISTS startup_connect;
 USE startup_connect;
 
 -- Tabela de termos e condições
-CREATE TABLE termo_condicao (
+CREATE TABLE IF NOT EXISTS termo_condicao (
     idtermos_condicao INT NOT NULL AUTO_INCREMENT, -- ID do termo de condição
     status_projeto VARCHAR(45) NOT NULL, -- Status do projeto
     PRIMARY KEY (idtermos_condicao) -- Chave primária
 );
 
 -- Tabela de log de projetos
-CREATE TABLE log_projeto (
+CREATE TABLE IF NOT EXISTS log_projeto (
     idlog_projeto INT NOT NULL AUTO_INCREMENT, -- ID do log do projeto
     data_hora_acessada DATETIME NOT NULL, -- Data e hora de acesso
     descricao_log VARCHAR(80) NOT NULL, -- Descrição do log
@@ -20,7 +20,7 @@ CREATE TABLE log_projeto (
 );
 
 -- Tabela de usuários
-CREATE TABLE usuario (
+CREATE TABLE IF NOT EXISTS usuario (
     idusuario INT NOT NULL AUTO_INCREMENT, -- ID do usuário
     nome_usuario VARCHAR(80) NOT NULL, -- Nome do usuário
     cpf_usuario VARCHAR(11) NOT NULL, -- CPF do usuário
@@ -30,10 +30,11 @@ CREATE TABLE usuario (
     email_usuario VARCHAR(256) NOT NULL, -- E-mail do usuário
     senha_usuario VARCHAR(256) NOT NULL, -- Senha do usuário
     status_usuario VARCHAR(30) NOT NULL, -- Status que usuário pertence
-    PRIMARY KEY (idusuario), -- Chave primária
+    PRIMARY KEY (idusuario) -- Chave primária
+);
 
 -- Tabela de projetos
-CREATE TABLE projeto (
+CREATE TABLE IF NOT EXISTS projeto (
     idprojeto INT NOT NULL AUTO_INCREMENT, -- ID do projeto
     razao_social VARCHAR(80) NOT NULL, -- Razão social do projeto
     cnpj_projeto VARCHAR(450) NOT NULL, -- CNPJ do projeto
@@ -55,16 +56,16 @@ CREATE TABLE projeto (
 );
 
 -- Tabela de tipos de projeto
-CREATE TABLE tipo_projeto (
+CREATE TABLE IF NOT EXISTS tipo_projeto (
     idtipo_projeto INT NOT NULL AUTO_INCREMENT, -- ID do tipo de projeto
     tipo_projeto VARCHAR(80) NOT NULL, -- Tipo de projeto
-    fk_projeto INT NOT NULL, -- Chave estrangeira para o projeto
+    fk_projeto INT, -- Chave estrangeira para o projeto
     PRIMARY KEY (idtipo_projeto), -- Chave primária
     FOREIGN KEY (fk_projeto) REFERENCES projeto(idprojeto) -- Chave estrangeira da tabela projeto
 );
 
 -- Tabela de projetos e tipos associados
-CREATE TABLE projeto_tipo (
+CREATE TABLE IF NOT EXISTS projeto_tipo (
     id_projeto_tipo INT NOT NULL AUTO_INCREMENT, -- ID do projeto e tipo associado
     status_projeto_tipo VARCHAR(100), -- Status do projeto e tipo associado
     fk_idprojeto INT, -- Chave estrangeira para o projeto
