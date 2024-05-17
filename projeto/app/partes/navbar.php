@@ -18,44 +18,43 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
                     <div class="dropdown-menu m-0">
-                        <a href="plugins_empresa/editors.php" class="dropdown-item">Criar Startup</a>
+                        <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
                         <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>
-                <li class="nav-item dropdown hidden-caret">
+
+            <li class="nav-item dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                     <div class="avatar-sm">
                         <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-
-                        <ul class="dropdown-menu dropdown-user animated fadeIn">
-                            <div class="dropdown-user-scroll scrollbar-outer">
-                            <li>
-                                <div class="user-box">
-                                    <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
-                                    <div class="u-text">
-                                        <h4>Hizrian</h4>
-                                     <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-                                 </div>
-                              </div>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Profile</a>
-                                <a class="dropdown-item" href="#">My Balance</a>
-                                <a class="dropdown-item" href="#">Inbox</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Account Setting</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </li>
-                        </ul>
-                        </div>
                     </div>
                 </a>
-                
-               
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                        <li>
+                            <div class="user-box">
+                                <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+                                <div class="u-text">
+                                    <h4>Hizrian</h4>
+                                    <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">My Profile</a>
+                            <a class="dropdown-item" href="#">My Balance</a>
+                            <a class="dropdown-item" href="#">Inbox</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Account Setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+                    </div>
+                </ul>
             </li>
-            </div>
+
+
 
         </div>
     </nav>
