@@ -49,7 +49,8 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
     $stmt->execute();
     $_SESSION['usuario'] = array(
         'nome' => $nome_cadastro_db,
-        'status' => $tipo_usuario_db
+        'status' => $tipo_usuario_db,
+        'email' => $email_cadastro_db
     );
     if ($_SESSION['usuario']['status'] == "Fundador"){
         header("Location: ../../../plugins_empresa/cadastro_empresa.php");
@@ -85,7 +86,8 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                 // Se a senha estiver correta, define a sessão do usuário
                 $_SESSION['usuario'] = array(
                     'nome' => $nome_usuario,
-                    'status' => $tipo_usuario
+                    'status' => $tipo_usuario,
+                    'email' => $email_usuario
                 );
                 if ($_SESSION['usuario']['status'] == "Fundador"){
                     header("Location: ../../../plugins_dashboard/dashboard.php");
