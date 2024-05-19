@@ -25,7 +25,7 @@
         </div>
 
         <div class="form">
-            <form action="#">
+            <form action="dist/php/function/insert_empresa.php" method="POST">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro da empresa</h1>
@@ -133,7 +133,7 @@
               
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
+                    <button><a href="#" name="cadastro_empresa">Continuar</a> </button>
                 </div>
             </form>
         </div>
