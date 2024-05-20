@@ -1,5 +1,5 @@
 <?php session_start();
-    include_once('dist/php/controle_sessao.php')
+    include_once('dist/php/controle_sessao.php');
 ?>
 
 <!DOCTYPE html>
