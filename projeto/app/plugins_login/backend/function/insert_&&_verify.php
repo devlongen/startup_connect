@@ -97,16 +97,17 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
                 // Senha incorreta
-                echo "Senha incorreta";
-                return false;
+                notify_user($senha_login_db);
             }
         } else {
             // Usuário não encontrado
-            echo "Usuário não encontrado";
-            return false;
+            notify_user($email_login_db);
         }
     } else {
         echo "Erro ao executar a consulta SQL: " . $stmt->error;
         return false;
     }
+}
+function notify_user(){
+    return "Este email não existe";
 }

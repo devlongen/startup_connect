@@ -68,7 +68,7 @@
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Você pode começar Agora</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Invista em negócios Promissores</h1>
                         <a href="plugins_empresa/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
-                        <a href="plugins_projeto/index.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                        <a href="plugins_projeto/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>
