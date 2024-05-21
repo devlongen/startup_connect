@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +24,7 @@
 
 <div class="container">
   <div class="form">
-    <form action="#">
+    <form action="dist/php/function/insert_empresa.php">
       <div class="form-header">
         <div class="title">
           <h1>Cadastro da empresa</h1>
@@ -84,9 +87,12 @@
   
 
       </div>
-
+      <div class="input-box">
+          <label for="termos-condicao">Aceite os nossos termos de condições do nosso site.</label>
+          <input id="termos-condicao" type="checkbox" name="termos-condicao" value="estou de acordo com termos"required>
+        </div>
       <div class="continue-button">
-        <button type="submit">Continuar</button>
+        <button type="submit" name="cadastro_empresa_db">Continuar</button>
       </div>
     </form>
   </div>

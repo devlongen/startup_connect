@@ -85,6 +85,7 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
             if (password_verify($senha_login_db, $senha_usuario)) {
                 // Se a senha estiver correta, define a sessão do usuário
                 $_SESSION['usuario'] = array(
+                    'id' => $id_usuario,
                     'nome' => $nome_usuario,
                     'status' => $tipo_usuario,
                     'email' => $email_usuario
