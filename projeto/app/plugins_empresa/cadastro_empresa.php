@@ -88,8 +88,8 @@
 
       </div>
       <div class="input-box">
-          <label for="termos-condicao">Aceite os nossos termos de condições do nosso site.</label>
-          <input id="termos-condicao" type="checkbox" name="termos-condicao" value="estou de acordo com termos"required>
+          <label for="termos-condicao">Leia e aceite os nossos termos de condições do nosso site.</label>
+          <input id="termos-condicao" type="checkbox" name="termos-condicao" value="estou de acordo com termos"required> Estou de acordo com os termos!
         </div>
       <div class="continue-button">
         <button type="submit" name="cadastro_empresa_db">Continuar</button>
