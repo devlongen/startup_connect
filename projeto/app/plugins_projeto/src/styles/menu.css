@@ -87,7 +87,7 @@ body {
 #menu .section-title {
     font-size: 32px; /* Tamanho maior do texto */
     font-weight: bold;
-    color: rgb(11, 76, 255); /* Cor do texto */
+    color: rgba(6, 158, 247, 0.979); /* Cor do texto */
     margin-bottom: 15px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transformar texto em maiúsculas */
     transition: color 0.3s ease; /* Transição suave para a mudança de cor */
@@ -95,14 +95,14 @@ body {
 }
 
 #menu .section-title:hover {
-    color: rgb(0, 128, 255); /* Cor alterada ao passar o mouse */
+    color: rgb(6, 158, 247, 0.979); /* Cor alterada ao passar o mouse */
 }
 
 /* Estilos para o título */
 #menu .section-title {
     font-size: 48px; /* Tamanho grande do texto */
     font-weight: bold;
-    color: rgb(11, 76, 255); /* Cor do texto */
+    color: rgb(6, 158, 247, 0.979); /* Cor do texto */
     margin-bottom: 15px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transformar texto em maiúsculas */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra do texto */
@@ -112,7 +112,7 @@ body {
 /* Estilos para o subtítulo */
 #menu .section-subtitle {
     font-size: 24px; /* Tamanho do texto do subtítulo */
-    color: rgb(11, 76, 255); /* Cor do texto */
+    color: rgb(6, 158, 247, 0.979); /* Cor do texto */
     margin-bottom: 20px; /* Espaço abaixo do subtítulo */
 }
 

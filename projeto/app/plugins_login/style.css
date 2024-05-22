@@ -47,7 +47,7 @@ body {
 }
 
 .container button {
-    background-color: #512da8;
+    background-color: #007bff;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -165,9 +165,9 @@ body {
 }
 
 .toggle {
-    background-color: #0a0dd6;
+    background-color: #007bff;
     height: 100%;
-    background: linear-gradient(to right, #04198d, #512da8);
+    background: linear-gradient(to right, #007bff, #007bff);
     color: #fff;
     position: relative;
     left: -100%;
