@@ -8,21 +8,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="" class="nav-item nav-link active">Home</a>
-                <a href="plugins_projeto/projeto.php" class="nav-item nav-link">Projetos</a>
-                <a href="plugins_login/tela_login.php" class="nav-item nav-link">Login</a>
-
-                <div class="nav-item dropdown">
-
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
-                        <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
-                    </div>
-                </div>
-
             <li class="nav-item dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                     <div class="avatar-sm">
@@ -33,7 +18,7 @@
                     <div class="dropdown-user-scroll scrollbar-outer">
                         <li>
                             <div class="user-box">
-                                <div class="avatar-lg"><img src="../dist/img/projeto/app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="image profile" class="avatar-img rounded"></div>
+                                <div><img src="../dist/img/projeto/app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="image profile" class="avatar-img rounded"></div>
                                 <div class="u-text">
                                     <h4><?php echo $_SESSION['usuario']['nome']?></h4>
                                     <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
@@ -53,6 +38,20 @@
                     </div>
                 </ul>
             </li>
+                <a href="" class="nav-item nav-link active">Home</a>
+                <a href="plugins_projeto/projeto.php" class="nav-item nav-link">Projetos</a>
+                <a href="plugins_login/tela_login.php" class="nav-item nav-link">Login</a>
+
+                <div class="nav-item dropdown">
+
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
+                        <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
+                    </div>
+                </div>
 
 
 
