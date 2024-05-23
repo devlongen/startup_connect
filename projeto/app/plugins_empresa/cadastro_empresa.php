@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="../plugins/codemirror/codemirror.css">
+  <link rel="stylesheet" href="../plugins/codemirror/theme/monokai.css">
   
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
