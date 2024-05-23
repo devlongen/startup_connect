@@ -18,6 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+CREATE DATABASE IF NOT EXISTS startup_connect;
+USE startup_connect;
 -- Banco de dados: `startup_connect`
 --
 
