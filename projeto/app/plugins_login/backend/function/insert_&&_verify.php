@@ -91,9 +91,9 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                     'email' => $email_usuario
                 );
                 if ($_SESSION['usuario']['status'] == "Fundador"){
-                    header("Location: ../../../plugins_dashboard/dashboard.php");
+                    header("Location: ../../../plugins_dashboard/dashboard_fundador.php");
                 }else{
-                    header("Location: ../../../plugins_projeto/projeto.php");
+                    header("Location: ../../../plugins_projeto/dashboard_investidor.php");
                 }
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
