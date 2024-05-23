@@ -8,6 +8,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
+            <li class="nav-item dropdown hidden-caret">
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <div class="avatar-sm">
+                        <img src="../dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                        <li>
+                            <div class="user-box">
+                                <div><img src="../dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="image profile" class="avatar-img rounded"></div>
+                                <div class="u-text">
+                                    <h4><?php echo $_SESSION['usuario']['nome']?></h4>
+                                    <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Meu Perfil</a>
+                            <a class="dropdown-item" href="#">Minha Startup</a>
+                            <a class="dropdown-item" href="#">Inbox</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Configurações da conta</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../app/plugins_login/backend/function/logout.php">Logout</a>
+                        </li>
+                    </div>
+                </ul>
+            </li>
                 <a href="" class="nav-item nav-link active">Home</a>
                 <a href="plugins_projeto/projeto.php" class="nav-item nav-link">Projetos</a>
                 <a href="plugins_login/tela_login.php" class="nav-item nav-link">Login</a>
@@ -22,37 +52,6 @@
                         <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>
-
-            <li class="nav-item dropdown hidden-caret">
-                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-                    <div class="avatar-sm">
-                        <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                </a>
-                <ul class="dropdown-menu dropdown-user animated fadeIn">
-                    <div class="dropdown-user-scroll scrollbar-outer">
-                        <li>
-                            <div class="user-box">
-                                <div class="avatar-lg"><img src="../dist/img/projeto/app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="image profile" class="avatar-img rounded"></div>
-                                <div class="u-text">
-                                    <h4><?php echo $_SESSION['usuario']['nome']?></h4>
-                                    <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">My Profile</a>
-                            <a class="dropdown-item" href="#">My Balance</a>
-                            <a class="dropdown-item" href="#">Inbox</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Account Setting</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
-                    </div>
-                </ul>
-            </li>
 
 
 
