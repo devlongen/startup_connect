@@ -129,5 +129,39 @@
     });
   })
 </script>
+
+
+<script>
+ 
+    // Capturar o envio do formulário
+    $('#empresa-form').on('submit', function(event) {
+      event.preventDefault(); // Previne o envio padrão do formulário
+
+      // Obtém o conteúdo do Summernote
+      var summernoteContent = $('#summernote').val();
+
+      // Obtém o nome da empresa
+      var nomeEmpresa = $('#nome-empresa').val();
+
+      // Envia o conteúdo do Summernote e o nome da empresa via AJAX
+      $.ajax({
+        url: 'salvar_summernote.php', // URL para salvar o conteúdo do Summernote
+        type: 'POST',
+        data: { content: summernoteContent, empresa: nomeEmpresa },
+        success: function(response) {
+          // Lógica de sucesso aqui (por exemplo, redirecionar ou mostrar uma mensagem)
+          alert('Conteúdo do Summernote salvo com sucesso!');
+        },
+        error: function(xhr, status, error) {
+          // Lógica de erro aqui
+          alert('Ocorreu um erro ao salvar o conteúdo do Summernote.');
+        }
+      });
+
+      // Você pode continuar com o envio dos outros dados do formulário para o PHP que os salvará no banco de dados
+    });
+  });
+</script>
+
 </body>
 </html>
