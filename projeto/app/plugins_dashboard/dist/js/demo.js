@@ -18,8 +18,8 @@ Circles.create({
 //Notify
 $.notify({
 	icon: 'flaticon-alarm-1',
-	title: 'Atlantis',
-	message: 'Premium Bootstrap 4 Admin Dashboard',
+	title: 'Startup Connect',
+	message: 'Seja bem vindo novamente!',
 },{
 	type: 'secondary',
 	placement: {
@@ -58,9 +58,9 @@ var ctx = document.getElementById('statisticsChart').getContext('2d');
 var statisticsChart = new Chart(ctx, {
 	type: 'line',
 	data: {
-		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		labels: ["Jan", "Fev", "Mar", "Abril", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
 		datasets: [ {
-			label: "Subscribers",
+			label: "Quantos acessaram a startup",
 			borderColor: '#f3545d',
 			pointBackgroundColor: 'rgba(243, 84, 93, 0.6)',
 			pointRadius: 0,
@@ -70,7 +70,7 @@ var statisticsChart = new Chart(ctx, {
 			borderWidth: 2,
 			data: [154, 184, 175, 203, 210, 231, 240, 278, 252, 312, 320, 374]
 		}, {
-			label: "New Visitors",
+			label: "Investidores",
 			borderColor: '#fdaf4b',
 			pointBackgroundColor: 'rgba(253, 175, 75, 0.6)',
 			pointRadius: 0,
@@ -79,17 +79,7 @@ var statisticsChart = new Chart(ctx, {
 			fill: true,
 			borderWidth: 2,
 			data: [256, 230, 245, 287, 240, 250, 230, 295, 331, 431, 456, 521]
-		}, {
-			label: "Active Users",
-			borderColor: '#177dff',
-			pointBackgroundColor: 'rgba(23, 125, 255, 0.6)',
-			pointRadius: 0,
-			backgroundColor: 'rgba(23, 125, 255, 0.4)',
-			legendColor: '#177dff',
-			fill: true,
-			borderWidth: 2,
-			data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900]
-		}]
+		},]
 	},
 	options : {
 		responsive: true, 
@@ -174,7 +164,7 @@ var myDailySalesChart = new Chart(dailySalesChart, {
 		"August",
 		"September"],
 		datasets:[ {
-			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(255,255,255,0.2)", borderColor: "#fff", borderCapStyle: "butt", borderDash: [], borderDashOffset: 0, pointBorderColor: "#fff", pointBackgroundColor: "#fff", pointBorderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#fff", pointHoverBorderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [65, 59, 80, 81, 56, 55, 40, 35, 30]
+			label: "Analise de investimento", fill: !0, backgroundColor: "rgba(255,255,255,0.2)", borderColor: "#fff", borderCapStyle: "butt", borderDash: [], borderDashOffset: 0, pointBorderColor: "#fff", pointBackgroundColor: "#fff", pointBorderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#fff", pointHoverBorderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [65, 59, 80, 81, 56, 55, 40, 35, 30]
 		}]
 	},
 	options : {

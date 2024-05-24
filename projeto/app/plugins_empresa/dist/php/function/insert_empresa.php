@@ -12,9 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_empresa_db"])
     $data_abertura = $_POST['data-abertura'];
     $patrimonio = $_POST['patrimonio'];
     $meta_total = $_POST['meta-total'];
+    $descricao = $_POST['desc-startup'];
     $termo_condicao = $_POST['termos-condicao'];
     insert_empresa($razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total,$termo_condicao);
-    function insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total, $termo_condicao) {
+    function insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total,$descricao , $termo_condicao) {
         // Verifica se a sessão do usuário está iniciada
         session_start();
 
@@ -39,9 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_empresa_db"])
         $fk_idusuario = $_SESSION['usuario']['id'];
         $fk_idlog_projeto = 0;
         // Preparar a declaração SQL com placeholders
-        $stmt = $conexao->prepare("INSERT INTO projeto (razao_social, cnpj_projeto, nome_fantasia, endereco, email_corporativo, data_abertura_empresa, data_abertura_site, patrimonio_oferecido, meta_total, fk_idtermo_condicao, fk_idusuario, fk_idlog_projeto) 
-                                   VALUES (?, ?, ?, ?, ?, ?, CURRENT_DATE(), ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssssss", $razao_social, $cnpj, $nome_fantasia, $endereco, $email, $data_abertura, $patrimonio, $meta_total, $fk_idtermo_condicao, $fk_idusuario, $fk_idlog_projeto);
+        $stmt = $conexao->prepare("INSERT INTO projeto (razao_social, cnpj_projeto, nome_fantasia, endereco, email_corporativo, data_abertura_empresa, data_abertura_site, patrimonio_oferecido, meta_total, desc_empresa , fk_idtermo_condicao, fk_idusuario, fk_idlog_projeto) 
+                                   VALUES (?, ?, ?, ?, ?, ?, CURRENT_DATE(), ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssssssss", $razao_social, $cnpj, $nome_fantasia, $endereco, $email, $data_abertura, $patrimonio, $meta_total, $descricao , $fk_idtermo_condicao, $fk_idusuario, $fk_idlog_projeto);
         $stmt->execute();
     
         // Fechar a declaração preparada

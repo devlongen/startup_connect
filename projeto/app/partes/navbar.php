@@ -27,9 +27,7 @@
                         </li>
                         <li>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Meu Perfil</a>
-                            <a class="dropdown-item" href="#">Minha Startup</a>
-                            <a class="dropdown-item" href="#">Inbox</a>
+                            <a class="dropdown-item" href="">Meu perfil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Configurações da conta</a>
                             <div class="dropdown-divider"></div>

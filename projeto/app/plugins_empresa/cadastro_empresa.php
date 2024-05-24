@@ -74,6 +74,10 @@
           <label for="meta-total">Meta total</label>
           <input id="meta-total" type="text" name="meta-total" placeholder="Digite a meta total" required>
         </div>
+        <div class="input-box">
+          <label for="desc-startup">Descrição</label>
+          <input id="desc-startup" type="text" name="desc-startup" placeholder="Digite a sua descrição" required>
+        </div>
 
         <div class="col-md-12">
           <div class="card card-outline card-info">
