@@ -9,16 +9,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
             <li class="nav-item dropdown hidden-caret">
-                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false">
                     <div class="avatar-sm">
-                        <img src="../dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="..." class="avatar-img rounded-circle">
+                        <img src="../app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="90px" style="padding-top: 15px;" alt="..." class="avatar-img rounded-circle">
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">
                         <li>
                             <div class="user-box">
-                                <div><img src="../dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="image profile" class="avatar-img rounded"></div>
+                                <div><img src="../app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="50px" alt="image profile" class="avatar-img rounded"></div>
                                 <div class="u-text">
                                     <h4><?php echo $_SESSION['usuario']['nome']?></h4>
                                     <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p>
