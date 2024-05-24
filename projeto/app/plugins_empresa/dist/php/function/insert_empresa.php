@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_empresa_db"])
     $data_abertura = $_POST['data-abertura'];
     $patrimonio = $_POST['patrimonio'];
     $meta_total = $_POST['meta-total'];
-    $termo_condicao = $_POST['termos-condicao']
+    $termo_condicao = $_POST['termos-condicao'];
     insert_empresa($razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total,$termo_condicao);
     function insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total, $termo_condicao) {
         // Verifica se a sessão do usuário está iniciada
