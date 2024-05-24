@@ -21,7 +21,7 @@
                                 <div><img src="../dist/img/User-Profile-PNG-Download-Image-1508492577.png" alt="image profile" class="avatar-img rounded"></div>
                                 <div class="u-text">
                                     <h4><?php echo $_SESSION['usuario']['nome']?></h4>
-                                    <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                    <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p>
                                 </div>
                             </div>
                         </li>
@@ -29,7 +29,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="">Meu perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Configurações da conta</a>
+                            <a class="dropdown-item" href="">Configurações da conta</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../app/plugins_login/backend/function/logout.php">Logout</a>
                         </li>
