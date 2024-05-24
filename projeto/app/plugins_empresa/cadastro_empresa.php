@@ -82,7 +82,7 @@
         <div class="col-md-12">
           <div class="card card-outline card-info">
             <div class="card-header">
-              <h3 class="card-title">Summernote</h3>
+              <h3 class="card-title">Para continuar, precisaremos que você crie como sua startup será vista para nossos usuários, logo abaixo tem ferramentas!</h3>
             </div>
             <div class="card-body">
               <textarea id="summernote">Place <em>some</em> <u>text</u> <strong>here</strong></textarea>
