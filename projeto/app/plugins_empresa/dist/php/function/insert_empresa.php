@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_empresa_db"])
     // Verifica se a sessão do usuário está iniciada
     session_start();
     $fk_idusuario = $_SESSION['usuario']['id'];
-    $fk_idlog_projeto = 0;
 
     insert_termo($conexao, $termo_condicao);
     insert_logprojeto($conexao, $descricao, $nome_fantasia);
@@ -53,6 +52,14 @@ function insert_logprojeto($conexao, $descricao, $nome_fantasia) {
     $stmt = $conexao->prepare("INSERT INTO log_projeto (descricao_log, status_log) VALUES (?, ?)");
     $stmt->bind_param("ss", $descricao, $nome_fantasia);
     $stmt->execute();
+
+    // Obter o ID do último registro inserido
+    $fk_idlog_projeto = $conexao->insert_id;
+
+    if ($fk_idlog_projeto === 0) {
+        die("Erro ao inserir registro na tabela 'log_projeto'.");
+    }
+
     $stmt->close();
 }
 ?>
