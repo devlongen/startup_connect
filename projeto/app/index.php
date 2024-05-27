@@ -1,5 +1,11 @@
 <?php session_start();
     include_once('dist/php/controle_sessao.php');
+    $_SESSION['usuario'] = array(
+        'nome' => "Usuário",
+        'email' => "Faça sua conta",
+        'status' => "Comum"
+    );
+
 ?>
 
 <!DOCTYPE html>
