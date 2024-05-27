@@ -30,3 +30,22 @@ function validacaoEmail(field) {
     alert("E-mail invalido");
     }
     }
+
+function formatCPF(cpfInput) {
+        let cpf = cpfInput.value;
+        
+        // Remove any non-numeric characters
+        cpf = cpf.replace(/\D/g, "");
+        
+        // Apply the CPF mask
+        if (cpf.length > 3 && cpf.length <= 6) {
+            cpf = cpf.replace(/^(\d{3})(\d+)/, "$1.$2");
+        } else if (cpf.length > 6 && cpf.length <= 9) {
+            cpf = cpf.replace(/^(\d{3})(\d{3})(\d+)/, "$1.$2.$3");
+        } else if (cpf.length > 9) {
+            cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d+)/, "$1.$2.$3-$4");
+        }
+        
+        // Set the formatted value back to the input
+        cpfInput.value = cpf;
+    }    
