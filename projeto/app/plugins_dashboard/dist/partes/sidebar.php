@@ -9,7 +9,7 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Admin
+									
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -58,7 +58,7 @@
 							
 						</li>
 						<li class="nav-item">
-							<a href="#forms">
+							<a href="empresas.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Empresas</p>
 								<span class="caret"></span>
