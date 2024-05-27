@@ -9,7 +9,7 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
+									Admin
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -37,9 +37,10 @@
 							</div>
 						</div>
 					</div>
+					
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
-							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+							<a  href="#dashboard" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 								<span class="caret"></span>
@@ -49,7 +50,7 @@
 						
 						
 						<li class="nav-item">
-							<a data-toggle="collapse" href="../../usuarios.php">
+							<a  href="usuarios.php">
 								<i class="fas fa-th-list"></i>
 								<p>Usuarios</p>
 								<span class="caret"></span>
@@ -57,13 +58,11 @@
 							
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
+							<a href="#forms">
 								<i class="fas fa-pen-square"></i>
 								<p>Empresas</p>
 								<span class="caret"></span>
 							</a>
-							
-						
 					</ul>
 				</div>
 			</div>
