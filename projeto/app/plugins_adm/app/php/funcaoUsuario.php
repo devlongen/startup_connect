@@ -3,7 +3,7 @@
 function listaUsuario(){
 
     include("conexao.php");
-    $sql = "SELECT * FROM usuarios ORDER BY idUsuario;";
+    $sql = "SELECT * FROM usuarios ORDER BY idusuario;";
             
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
@@ -32,21 +32,21 @@ function listaUsuario(){
             //***Verificar os dados da consulta SQL
             $lista .= 
             '<tr>'
-                .'<td align="center">'.$coluna["idUsuario"].'</td>'
-                .'<td align="center">'.descrTipoUsuario($coluna["idTipoUsuario"]).'</td>'
+                .'<td align="center">'.$coluna["idusuario"].'</td>'
+                .'<td align="center">'.descrTipoUsuario($coluna["idusuario"]).'</td>'
                 .'<td>'.$coluna["Nome"].'</td>'
                 .'<td>'.$coluna["Login"].'</td>'
                 .'<td align="center">'.$icone.'</td>'
                 .'<td>'
                     .'<div class="row" align="center">'
                         .'<div class="col-6">'
-                            .'<a href="#modalEditUsuario'.$coluna["idUsuario"].'" data-toggle="modal">'
+                            .'<a href="#modalEditUsuario'.$coluna["idusuario"].'" data-toggle="modal">'
                                 .'<h6><i class="fas fa-edit text-info" data-toggle="tooltip" title="Alterar usuário"></i></h6>'
                             .'</a>'
                         .'</div>'
                         
                         .'<div class="col-6">'
-                            .'<a href="#modalDeleteUsuario'.$coluna["idUsuario"].'" data-toggle="modal">'
+                            .'<a href="#modalDeleteUsuario'.$coluna["idusuario"].'" data-toggle="modal">'
                                 .'<h6><i class="fas fa-trash text-danger" data-toggle="tooltip" title="Excluir usuário"></i></h6>'
                             .'</a>'
                         .'</div>'
@@ -54,7 +54,7 @@ function listaUsuario(){
                 .'</td>'
             .'</tr>'
             
-            .'<div class="modal fade" id="modalEditUsuario'.$coluna["idUsuario"].'">'
+            .'<div class="modal fade" id="modalEditUsuario'.$coluna["idusuario"].'">'
                 .'<div class="modal-dialog modal-lg">'
                     .'<div class="modal-content">'
                         .'<div class="modal-header bg-info">'
@@ -65,7 +65,7 @@ function listaUsuario(){
                         .'</div>'
                         .'<div class="modal-body">'
 
-                            .'<form method="POST" action="php/salvarUsuario.php?funcao=A&codigo='.$coluna["idUsuario"].'" enctype="multipart/form-data">'              
+                            .'<form method="POST" action="php/salvarUsuario.php?funcao=A&codigo='.$coluna["idusuario"].'" enctype="multipart/form-data">'              
                 
                                 .'<div class="row">'
                                     .'<div class="col-8">'
@@ -79,7 +79,7 @@ function listaUsuario(){
                                         .'<div class="form-group">'
                                             .'<label for="iNome">Tipo de Usuário:</label>'
                                             .'<select name="nTipoUsuario" class="form-control" required>'
-                                                .'<option value="'.$coluna["idTipoUsuario"].'">'.descrTipoUsuario($coluna["idTipoUsuario"]).'</option>'
+                                                .'<option value="'.$coluna["idusuario"].'">'.descrTipoUsuario($coluna["idusuario"]).'</option>'
                                                 .optionTipoUsuario()
                                             .'</select>'
                                         .'</div>'
@@ -127,18 +127,18 @@ function listaUsuario(){
                 .'</div>'
             .'</div>'
             
-            .'<div class="modal fade" id="modalDeleteUsuario'.$coluna["idUsuario"].'">'
+            .'<div class="modal fade" id="modalDeleteUsuario'.$coluna["idusuario"].'">'
                 .'<div class="modal-dialog">'
                     .'<div class="modal-content">'
                         .'<div class="modal-header bg-danger">'
-                            .'<h4 class="modal-title">Excluir Usuário: '.$coluna["idUsuario"].'</h4>'
+                            .'<h4 class="modal-title">Excluir Usuário: '.$coluna["idusuario"].'</h4>'
                             .'<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">'
                                 .'<span aria-hidden="true">&times;</span>'
                             .'</button>'
                         .'</div>'
                         .'<div class="modal-body">'
 
-                            .'<form method="POST" action="php/salvarUsuario.php?funcao=D&codigo='.$coluna["idUsuario"].'" enctype="multipart/form-data">'              
+                            .'<form method="POST" action="php/salvarUsuario.php?funcao=D&codigo='.$coluna["idusuario"].'" enctype="multipart/form-data">'              
 
                                 .'<div class="row">'
                                     .'<div class="col-12">'
@@ -169,7 +169,7 @@ function proxIdUsuario(){
     $id = "";
 
     include("conexao.php");
-    $sql = "SELECT MAX(idUsuario) AS Maior FROM usuarios;";        
+    $sql = "SELECT MAX(idusuario) AS Maior FROM usuarios;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -197,7 +197,7 @@ function tipoAcessoUsuario($id){
     $resp = "";
 
     include("conexao.php");
-    $sql = "SELECT idTipoUsuario FROM usuarios WHERE idUsuario = $id;";        
+    $sql = "SELECT idTipoUsuario FROM usuarios WHERE idusuario = $id;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -240,7 +240,7 @@ function fotoUsuario($id){
     $resp = "";
 
     include("conexao.php");
-    $sql = "SELECT Foto FROM usuarios WHERE idUsuario = $id;";        
+    $sql = "SELECT Foto FROM usuarios WHERE idusuario = $id;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -268,7 +268,7 @@ function nomeUsuario($id){
     $resp = "";
 
     include("conexao.php");
-    $sql = "SELECT Nome FROM usuarios WHERE idUsuario = $id;";        
+    $sql = "SELECT Nome FROM usuarios WHERE idusuario = $id;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -296,7 +296,7 @@ function loginUsuario($id){
     $resp = "";
 
     include("conexao.php");
-    $sql = "SELECT Login FROM usuarios WHERE idUsuario = $id;";        
+    $sql = "SELECT Login FROM usuarios WHERE idusuario = $id;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -324,7 +324,7 @@ function ativoUsuario($id){
     $resp = "";
 
     include("conexao.php");
-    $sql = "SELECT FlgAtivo FROM usuarios WHERE idUsuario = $id;";        
+    $sql = "SELECT FlgAtivo FROM usuarios WHERE idusuario = $id;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 

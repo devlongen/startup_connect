@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projeto Modelo - Produtos</title>
+  <title>Projeto Modelo - Projetos</title>
 
   <!-- CSS -->
   <?php include('partes/css.php'); ?>

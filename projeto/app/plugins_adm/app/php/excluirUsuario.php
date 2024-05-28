@@ -4,7 +4,7 @@
     $idUsuario = $_GET['id'];
 
     $sql = "DELETE FROM Usuarios "
-            ." WHERE md5(idUsuario) = '".$idUsuario."';";
+            ." WHERE md5(idusuario) = '".$idusuario."';";
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 

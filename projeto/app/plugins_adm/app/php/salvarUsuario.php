@@ -17,15 +17,17 @@
     if($funcao == "I"){
 
         //Busca o próximo ID na tabela
-        $idUsuario = proxIdUsuario();
+        $idUsuario = proxidusuario();
 
         //INSERT
-        $sql = "INSERT INTO usuarios (idUsuario,idTipoUsuario,Nome,Login,Senha,FlgAtivo) "
-                ." VALUES (".$idUsuario.","
-                .$tipoUsuario.","
-                ."'$nome',"
-                ."'$login',"
-                ."md5('$senha'),"
+        $sql = "INSERT INTO usuarios (idusuario,nome_usuario,cpf_usuario,telefone_usuario,data_nascimento_usuario,email_usuario,senha_usuario,FlgAtivo) "
+                ." VALUES (".$idusuario.","
+                .$nome_usuario.","
+                ."'$cpf_usuario',"
+                ."'$telefone_usuario',"
+                ."'$data_nascimento_usuario',"
+                ."'$email_usuario',"
+                ."md5('$senha_usuario'),"
                 ."'$ativo');";
 
     }elseif($funcao == "A"){
@@ -42,12 +44,12 @@
                     ." Login = '$login', "
                     .$setSenha 
                     ." FlgAtivo = '$ativo' "
-                ." WHERE idUsuario = $idUsuario;";
+                ." WHERE idUsuario = $idusuario;";
 
     }elseif($funcao == "D"){
         //DELETE
         $sql = "DELETE FROM usuarios "
-                ." WHERE idUsuario = $idUsuario;";
+                ." WHERE idUsuario = $idusuario;";
     }
 
     $result = mysqli_query($conn,$sql);
@@ -84,7 +86,7 @@
         //UPDATE
         $sql = "UPDATE usuarios "
                 ." SET Foto = '$dirImagem' "
-                ." WHERE idUsuario = $idUsuario;";
+                ." WHERE idUsuario = $idusuario;";
         $result = mysqli_query($conn,$sql);
         mysqli_close($conn);
     }

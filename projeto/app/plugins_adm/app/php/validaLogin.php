@@ -33,7 +33,7 @@
             //***Verificar os dados da consulta SQL
             $_SESSION['idTipoUsuario'] = $coluna['idTipoUsuario'];
             $_SESSION['logado']        = 1;
-            $_SESSION['idLogin']       = $coluna['idUsuario'];
+            $_SESSION['idLogin']       = $coluna['idusuario'];
             $_SESSION['NomeLogin']     = $coluna['Nome'];
             $_SESSION['FotoLogin']     = $coluna['Foto'];
             $_SESSION['AtivoLogin']    = $coluna['FlgAtivo'];

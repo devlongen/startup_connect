@@ -10,7 +10,7 @@ function montaMenu(){
                     .'<tr>'
                         .'<td>USUÁRIOS</td>';
 
-                        if($_SESSION['idTipoUsuario'] == 1){
+                        if($_SESSION['idusuario'] == 1){
                             $html .= '<td>PRODUTOS</td>';
                         }
                         

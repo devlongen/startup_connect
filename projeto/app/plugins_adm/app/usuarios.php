@@ -63,9 +63,13 @@
                   <thead>
                   <tr>
                       <th>ID</th>
-                      <th>Tipo de Usuário</th>
                       <th>Nome</th>
-                      <th>Login</th>
+                      <th>CPF</th>
+                      <th>Telefone</th>
+                      <th>Data/nascimento</th>
+                      <th>E-mail</th>
+                      <th>Senha</th>
+                      <th>Status</th>
                       <th>Ativo</th>                
                       <th>Ações</th>
                   </tr>

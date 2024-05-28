@@ -14,10 +14,10 @@
     if($funcao == "I"){
 
         //Busca o próximo ID na tabela
-        $idProduto = proxIdProduto();
+        $idProduto = proxIdProjeto();
 
         //INSERT
-        $sql = "INSERT INTO produto (idProduto,idCategoria,Descricao,Quantidade) "
+        $sql = "INSERT INTO produto (idprojeto,idCategoria,Descricao,Quantidade) "
                 ." VALUES (".$idProduto.","
                 .$idCategoria.","
                 ."'$descricao',"
@@ -29,12 +29,12 @@
                 ." SET idCategoria = ".$idCategoria.", "
                     ." Descricao = '".$descricao."', "
                     ." Quantidade = ".$quantidade
-                ." WHERE idProduto = ".$idProduto.";";
+                ." WHERE idprojeto = ".$idprojeto.";";
 
     }elseif($funcao == "D"){
         //DELETE
         $sql = "DELETE FROM produto "
-                ." WHERE idProduto = ".$idProduto.";";
+                ." WHERE idProduto = ".$idprojeto.";";
     }
 
     $result = mysqli_query($conn,$sql);

@@ -3,8 +3,8 @@
 function listaProduto(){
 
     include("conexao.php");
-    $sql = "SELECT pro.idProduto, "
-            ." pro.Descricao AS Produto, "
+    $sql = "SELECT pro.idprojeto, "
+            ." pro.Descricao AS Projeto, "
             ." pro.idCategoria, "
             ." cat.Descricao AS Categoria, "
             ." pro.Quantidade "
@@ -25,20 +25,20 @@ function listaProduto(){
             //***Verificar os dados da consulta SQL
             $lista .= 
             '<tr>'
-                .'<td>'.$coluna["idProduto"].'</td>'
-                .'<td>'.$coluna["Produto"].'</td>'
+                .'<td>'.$coluna["idprojeto"].'</td>'
+                .'<td>'.$coluna["Projeto"].'</td>'
                 .'<td>'.$coluna["Categoria"].'</td>'
                 .'<td>'.$coluna["Quantidade"].'</td>'
                 .'<td>'
                     .'<div class="row" align="center">'
                         .'<div class="col-6">'
-                            .'<a href="#modalEditProduto'.$coluna["idProduto"].'" data-toggle="modal">'
+                            .'<a href="#modalEditProduto'.$coluna["idprojeto"].'" data-toggle="modal">'
                                 .'<h6><i class="fas fa-edit text-info" data-toggle="tooltip" title="Alterar produto"></i></h6>'
                             .'</a>'
                         .'</div>'
                         
                         .'<div class="col-6">'
-                            .'<a href="#modalDeleteProduto'.$coluna["idProduto"].'" data-toggle="modal">'
+                            .'<a href="#modalDeleteProduto'.$coluna["idprojeto"].'" data-toggle="modal">'
                                 .'<h6><i class="fas fa-trash text-danger" data-toggle="tooltip" title="Excluir produto"></i></h6>'
                             .'</a>'
                         .'</div>'
@@ -46,7 +46,7 @@ function listaProduto(){
                 .'</td>'
             .'</tr>'
             
-            .'<div class="modal fade" id="modalEditProduto'.$coluna["idProduto"].'">'
+            .'<div class="modal fade" id="modalEditProduto'.$coluna["idprojeto"].'">'
                 .'<div class="modal-dialog">'
                     .'<div class="modal-content">'
                         .'<div class="modal-header bg-info">'
@@ -57,13 +57,13 @@ function listaProduto(){
                         .'</div>'
                         .'<div class="modal-body">'
 
-                            .'<form method="POST" action="php/salvarProduto.php?funcao=A&codigo='.$coluna["idProduto"].'" enctype="multipart/form-data">'              
+                            .'<form method="POST" action="php/salvarProduto.php?funcao=A&codigo='.$coluna["idprojeto"].'" enctype="multipart/form-data">'              
                 
                                 .'<div class="row">'
                                     .'<div class="col-12">'
                                         .'<div class="form-group">'
                                             .'<label for="iDescricao">Descrição:</label>'
-                                            .'<input type="text" value="'.$coluna["Produto"].'" class="form-control" id="iDescricao" name="nDescricao" maxlength="80">'
+                                            .'<input type="text" value="'.$coluna["Projeto"].'" class="form-control" id="iDescricao" name="nDescricao" maxlength="80">'
                                         .'</div>'
                                     .'</div>'
                     
@@ -98,22 +98,22 @@ function listaProduto(){
                 .'</div>'
             .'</div>'
             
-            .'<div class="modal fade" id="modalDeleteProduto'.$coluna["idProduto"].'">'
+            .'<div class="modal fade" id="modalDeleteProduto'.$coluna["idprojeto"].'">'
                 .'<div class="modal-dialog">'
                     .'<div class="modal-content">'
                         .'<div class="modal-header bg-danger">'
-                            .'<h4 class="modal-title">Excluir Produto: '.$coluna["idProduto"].'</h4>'
+                            .'<h4 class="modal-title">Excluir Produto: '.$coluna["idprojeto"].'</h4>'
                             .'<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">'
                                 .'<span aria-hidden="true">&times;</span>'
                             .'</button>'
                         .'</div>'
                         .'<div class="modal-body">'
 
-                            .'<form method="POST" action="php/salvarProduto.php?funcao=D&codigo='.$coluna["idProduto"].'" enctype="multipart/form-data">'              
+                            .'<form method="POST" action="php/salvarProduto.php?funcao=D&codigo='.$coluna["idprojeto"].'" enctype="multipart/form-data">'              
 
                                 .'<div class="row">'
                                     .'<div class="col-12">'
-                                        .'<h5>Deseja EXCLUIR o produto '.$coluna["Produto"].'?</h5>'
+                                        .'<h5>Deseja EXCLUIR o produto '.$coluna["Projeto"].'?</h5>'
                                     .'</div>'
                                 .'</div>'
                                 
@@ -136,12 +136,12 @@ function listaProduto(){
 }
 
 //Próximo ID do produto
-function proxIdProduto(){
+function proxIdProjeto(){
 
     $id = "";
 
     include("conexao.php");
-    $sql = "SELECT MAX(idProduto) AS Maior FROM produto;";        
+    $sql = "SELECT MAX(idprojeto) AS Maior FROM produto;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 

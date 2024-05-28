@@ -54,7 +54,7 @@
               <li class="nav-item">
                 <a href="./produtos.php" class="nav-link active">
                   <i class="ion ion-bag nav-icon"></i>
-                  <p>Produtos</p>
+                  <p>Empresas</p>
                 </a>
               </li>              
             </ul>
@@ -62,16 +62,6 @@
 
           </li>
 
-
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Forms
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/forms/general.html" class="nav-link">
