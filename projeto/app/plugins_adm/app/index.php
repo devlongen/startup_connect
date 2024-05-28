@@ -5,13 +5,9 @@
 		<meta charset="UTF-8">
         <title>PHP</title>
 
-        <!-- CSS -->
-        <?php include('partes/css.php'); ?>
-        <!-- Fim CSS -->
-
     </head>
 
-    <body class="tela-login">
+    <body>
 
         <form method="POST" action="php/validaLogin.php">
         

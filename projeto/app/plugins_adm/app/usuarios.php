@@ -23,11 +23,7 @@
   <!-- Fim Navbar -->
 
   <!-- Sidebar -->
-  <?php 
-    $_SESSION['menu-n1'] = 'administrador';
-    $_SESSION['menu-n2'] = 'usuarios';
-    include('partes/sidebar.php'); 
-  ?>
+  <?php include('partes/sidebar.php'); ?>
   <!-- Fim Sidebar -->
 
   <!-- Content Wrapper. Contains page content -->
@@ -45,23 +41,22 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <div class="row">
-                  
-                  <div class="col-9">
-                    <h3 class="card-title">Usuários</h3>
-                  </div>
-                  
-                  <div class="col-3" align="right">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoUsuarioModal">
-                      Novo Usuário
-                    </button>
-                  </div>
+                 <div class="row">
 
-                </div>
+                   <div class="col-9">
+                      <h3 class="card-title">Usuários</h3>
+                   </div>
+
+                   <div class="col-3" align="right">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoUsuarioModal">
+                        Novo Usuário
+                    </button>
               </div>
 
-              
+                 </div>
+              </div>
 
+             
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="tabela" class="table table-bordered table-hover">
@@ -104,115 +99,71 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="php/salvarUsuario.php?funcao=I" enctype="multipart/form-data">              
-                
-                <div class="row">
+         <form method="POST" action="php/salvarUsuario.php?funcao=I" enctype="multipart/form-data">
+            
+         <div class="row">
+                    <div class="col-8">
+
+                      <div class="form-group">
+                        <label for="iNome">Nome:</label>
+                        <input type="text"  class="form-control" id="iNome" name="nNome" maxlength="50">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <div class="form-group">
+
+                        <label for="iNome">Tipo de Usuário:</label>
+                          <select name="nTipoUsuario" class="form-control" required>
+                              <option value="">Selecione...</option>
+                              <?php echo optionTipoUsuario();?>
+                          </select>
+                      </div>
+
+                    </div>
+
+                   </div>
+
                   <div class="col-8">
                     <div class="form-group">
-                      <label for="iNome">Nome:</label>
-                      <input type="text" class="form-control" id="iNome" name="nNome" maxlength="50">
-                    </div>
+                        <label for="iLogin">Login:</label>
+                        <input type="email" class="form-control" id="iLogin" name="nLogin" maxlength="50">
+                    </div>  
                   </div>
 
                   <div class="col-4">
                     <div class="form-group">
-                      <label for="iNome">Tipo de Usuário:</label>
-                      <select name="nTipoUsuario" class="form-control" required>
-                        <option value="">Selecione...</option>
-                        <?php echo optionTipoUsuario();?>
-                      </select>
-                    </div>
+                        <label for="iSenha">Senha:</label>
+                        <input type="text" class="form-control" id="iSenha" name="nSenha" maxlength="6">
+                    </div>  
                   </div>
 
-                  <div class="col-8">
-                    <div class="form-group">
-                      <label for="iLogin">Login:</label>
-                      <input type="email" class="form-control" id="iLogin" name="nLogin" maxlength="50">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="iSenha">Senha:</label>
-                      <input type="text" class="form-control" id="iSenha" name="nSenha" maxlength="6">
-                    </div>
-                  </div>
-                
                   <div class="col-12">
                     <div class="form-group">
-                      <label for="iFoto">Foto:</label>
-                      <input type="file" class="form-control" id="iFoto" name="Foto" accept="image/*">
+                        <label for="iFoto">Foto:</label>
+                        <input type="file" class="form-control" id="iFoto" name="Foto" accept="image/*">
                     </div>
                   </div>
-                
+
                   <div class="col-12">
                     <div class="form-group">
-                      <input type="checkbox" id="iAtivo" name="nAtivo">
-                      <label for="iAtivo">Usuário Ativo</label>
+                        <input type="checkbox"  id="iAtivo" name="nAtivo">
+                        <label for="iAtivo">Usuário Ativo</label>
                     </div>
                   </div>
 
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label>CEP</label>
-                      <input required name="CEP" type="text" class="form-control cep">
-                    </div>
-                  </div>
-                  
-                  <div class="col-9">
-                    <div class="form-group">
-                      <label>Endereço</label>
-                      <input required name="Endereco" type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label>Número</label>
-                      <input required name="Numero" type="text" maxlength="8" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-9">
-                    <div class="form-group">
-                      <label>Complemento</label>
-                      <input name="Complemento" type="text" maxlength="50" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-5">
-                    <div class="form-group">
-                      <label>Bairro</label>
-                      <input required name="Bairro" type="text" class="form-control">
-                    </div>
-                  </div>
-                  
-                  <div class="col-5">
-                    <div class="form-group">
-                      <label>Cidade</label>
-                      <input required name="Cidade" type="text" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="col-2">
-                    <div class="form-group">
-                      <label>UF</label>
-                      <input required name="UF" type="text" class="form-control">
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-success">Salvar</button>
-                </div>
-                
-              </form>
+                <div class="modal-footer ">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-success">Salvar</button>
+            </div>
+            
+         </form>
 
             </div>
             
+            
           </div>
+
           <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->

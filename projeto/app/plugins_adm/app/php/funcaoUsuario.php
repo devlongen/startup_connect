@@ -330,36 +330,20 @@ function ativoUsuario($id){
 
     //Validar se tem retorno do BD
     if (mysqli_num_rows($result) > 0) {
+                
+        $array = array();
         
-        foreach ($result as $coluna) {            
+        while ($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            array_push($array,$linha);
+        }
+        
+        foreach ($array as $coluna) {            
             //***Verificar os dados da consulta SQL
             if($coluna["FlgAtivo"] == 'S') $resp = 'checked'; else $resp = '';
         }        
     } 
 
     return $resp;
-}
-
-//Função para retornar a qtd de usuários ativos
-function qtdUsuariosAtivos(){
-    $qtd = 0;
-
-    include("conexao.php");
-    $sql = "SELECT COUNT(*) AS Qtd FROM usuarios WHERE FlgAtivo = 'S';";
-
-    $result = mysqli_query($conn,$sql);
-    mysqli_close($conn);
-
-    //Validar se tem retorno do BD
-    if (mysqli_num_rows($result) > 0) {
-        
-        foreach ($result as $coluna) {            
-            //***Verificar os dados da consulta SQL
-            $qtd = $coluna['Qtd'];
-        }        
-    }
-    
-    return $qtd;
 }
 
 ?>
