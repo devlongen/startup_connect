@@ -49,3 +49,9 @@ function formatCPF(cpfInput) {
         // Set the formatted value back to the input
         cpfInput.value = cpf;
     }    
+
+function limitCharacters(input, maxLength) {
+        if (input.value.length > maxLength) {
+            input.value = input.value.slice(0, maxLength);
+        }
+    }    
