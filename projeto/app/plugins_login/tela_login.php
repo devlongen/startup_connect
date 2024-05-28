@@ -15,10 +15,10 @@
             <form action="backend/function/insert_&&_verify.php" method="post" name="cadastro_db">
                 <h1>Criar uma conta</h1>
                 <input type="text" placeholder="Nome" name="nome_insert_db" required="true">
-                <input type="email" placeholder="Email" name="email_insert_db" required="true" class="validacaoEmail(email_insert_db.value)">
-                <input type="number" placeholder="CPF" id="" name="cpf_insert_db" required="true" minlength="11">
+                <input type="email" placeholder="Email" name="email_insert_db" required="true" oninput="validacaoEmail(this)">
+                <input type="text" placeholder="CPF" id="" name="cpf_insert_db" required="true" minlength="11" maxlength="11" oninput="formatCPF(this)">
                 <input type="password" placeholder="Senha" name="senha_insert_db" required="true" minlength="8">
-                <input type="text" placeholder="Telefone" name="telefone_insert_db" required="true" maxlength="11">
+                <input type="number" placeholder="Telefone" name="telefone_insert_db" required="true"  oninput="limitCharacters(this, 11)">
                 <input type="date" max="2005-12-31" name="data_de_nascimento_insert_db" required="true">
                 <input type="radio" name="tipo_usuario_db" value="Fundador" id="tipo_usuario" required="true">Fundador 
                 <input type="radio" name="tipo_usuario_db" value="Investidor" id="tipo_usuario" required="true">Investidor 
