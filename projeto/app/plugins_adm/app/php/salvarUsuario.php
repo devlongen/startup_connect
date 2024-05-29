@@ -11,8 +11,8 @@ $email_usuario   = $_POST["email_usuario"];
 $senha_usuario   = $_POST["senha_usuario"];
 $status_usuario  = $_POST["status_usuario"];
 
-// Verifica se o usuário está ativo
-$ativo = isset($_POST["nAtivo"]) && $_POST["nAtivo"] == "on" ? "S" : "N";
+// // Verifica se o usuário está ativo
+// $ativo = isset($_POST["nAtivo"]) && $_POST["nAtivo"] == "on" ? "S" : "N";
 
 include("conexao.php");
 

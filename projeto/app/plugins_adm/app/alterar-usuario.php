@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label for="iTipoUsuario">Tipo de Usuário:</label>
                 <select name="nTipoUsuario" class="form-control" required>
-                    <?php echo tipoAcessoUsuario($_GET['id']); ?>                    
+                                      
                 </select>
             </div>
             <div class="form-group">
