@@ -1,96 +1,92 @@
 <?php
 
-    include('funcoes.php');
+include('funcoes.php');
 
-    $tipoUsuario = $_POST["nTipoUsuario"];
-    $nome        = $_POST["nNome"];
-    $login       = $_POST["nLogin"];
-    $senha       = $_POST["nSenha"];
-    $funcao      = $_GET["funcao"];
-    $idUsuario   = $_GET["codigo"];
+$idUsuario = $_POST["idusuario"];
+$nome_usuario = $_POST["nome_usuario"];
+$cpf_usuario  = $_POST["cpf_usuario"];
+$telefone_usuario = $_POST["telefone_usuario"];
+$data_nascimento = $_POST["data_nascimento"];
+$email_usuario   = $_POST["email_usuario"];
+$senha_usuario   = $_POST["senha_usuario"];
+$status_usuario  = $_POST["status_usuario"];
 
-    if($_POST["nAtivo"] == "on") $ativo = "S"; else $ativo = "N";
+// Verifica se o usuário está ativo
+$ativo = isset($_POST["nAtivo"]) && $_POST["nAtivo"] == "on" ? "S" : "N";
 
-    include("conexao.php");
+include("conexao.php");
 
-    //Validar se é Inclusão ou Alteração
-    if($funcao == "I"){
+//Valida a função a ser executada
+if(isset($_GET['funcao'])) {
+    $funcao = $_GET['funcao'];
 
-        //Busca o próximo ID na tabela
+    if($funcao == "I") {
+        // Busca o próximo ID na tabela
         $idUsuario = proxidusuario();
 
-        //INSERT
-        $sql = "INSERT INTO usuarios (idusuario,nome_usuario,cpf_usuario,telefone_usuario,data_nascimento_usuario,email_usuario,senha_usuario,FlgAtivo) "
-                ." VALUES (".$idusuario.","
-                .$nome_usuario.","
-                ."'$cpf_usuario',"
-                ."'$telefone_usuario',"
-                ."'$data_nascimento_usuario',"
-                ."'$email_usuario',"
-                ."md5('$senha_usuario'),"
-                ."'$ativo');";
+        // Monta a query SQL para inserção
+        $sql = "INSERT INTO usuarios (idusuario, nome_usuario, cpf_usuario, telefone_usuario, data_nascimento_usuario, email_usuario, senha_usuario, status_usuario) "
+             . "VALUES ('$idUsuario', '$nome_usuario', '$cpf_usuario', '$telefone_usuario', '$data_nascimento', '$email_usuario', md5('$senha_usuario'), '$ativo')";
 
-    }elseif($funcao == "A"){
-        //UPDATE
-        if($senha == ''){ 
-            $setSenha = ''; 
-        }else{ 
-            $setSenha = " Senha = md5('".$senha."'), ";
+    } elseif ($funcao == "A") {
+        // Monta a query SQL para atualização
+        $setSenha = "";
+        if (!empty($senha_usuario)) {
+            $setSenha = "senha_usuario = md5('$senha_usuario'),";
         }
 
-        $sql = "UPDATE usuarios "
-                ." SET idTipoUsuario = $tipoUsuario, "
-                    ." Nome = '$nome', "
-                    ." Login = '$login', "
-                    .$setSenha 
-                    ." FlgAtivo = '$ativo' "
-                ." WHERE idUsuario = $idusuario;";
+        $sql = "UPDATE usuarios SET "
+             . "nome_usuario = '$nome_usuario', "
+             . "cpf_usuario = '$cpf_usuario', "
+             . "telefone_usuario = '$telefone_usuario', "
+             . "data_nascimento_usuario = '$data_nascimento', "
+             . "email_usuario = '$email_usuario', "
+             . "$setSenha "
+             . "status_usuario = '$ativo' "
+             . "WHERE idusuario = $idUsuario";
 
-    }elseif($funcao == "D"){
-        //DELETE
+    } elseif ($funcao == "D") {
+        // Monta a query SQL para exclusão
         $sql = "DELETE FROM usuarios "
-                ." WHERE idUsuario = $idusuario;";
+             . "WHERE idusuario = $idUsuario";
     }
 
-    $result = mysqli_query($conn,$sql);
-    mysqli_close($conn);
+    // Executa a query SQL
+    $result = mysqli_query($conn, $sql);
 
-
-    //VERIFICA SE TEM IMAGEM NO INPUT
-    if($_FILES['Foto']['tmp_name'] != ""){
-
-        //Usar o mesmo nome do arquivo original
-        //$nomeArq = $_FILES['Foto']['name'];
-        //...
-        //OU
-        //Pega a extensão do arquivo e cria um novo nome pra ele (MD5 do nome original)
-        $extensao = pathinfo($_FILES['Foto']['name'], PATHINFO_EXTENSION);
-        $novoNome = md5($_FILES['Foto']['name']).'.'.$extensao;        
-        
-        //Verificar se o diretório existe, ou criar a pasta
-        if(is_dir('../dist/img/')){
-            //Existe
-            $diretorio = '../dist/img/';
-        }else{
-            //Criar pq não existe
-            $diretorio = mkdir('../dist/img/');
+    // Verifica se a operação foi bem-sucedida
+    if ($result) {
+        // Verifica se o diretório para as imagens existe, senão cria
+        $diretorio = '../dist/img/';
+        if (!is_dir($diretorio)) {
+            mkdir($diretorio, 0755, true); // Cria o diretório com permissões adequadas
         }
 
-        //Cria uma cópia do arquivo local na pasta do projeto
-        move_uploaded_file($_FILES['Foto']['tmp_name'], $diretorio.$novoNome);
+        // Move o arquivo de imagem para o diretório especificado
+        $novoNome = basename($_FILES['Foto']['name']);
+        move_uploaded_file($_FILES['Foto']['tmp_name'], $diretorio . $novoNome);
 
-        //Caminho que será salvo no banco de dados
-        $dirImagem = 'dist/img/'.$novoNome;
+        // Caminho da imagem para ser salvo no banco de dados
+        $dirImagem = 'dist/img/' . $novoNome;
 
-        include("conexao.php");
-        //UPDATE
-        $sql = "UPDATE usuarios "
-                ." SET Foto = '$dirImagem' "
-                ." WHERE idUsuario = $idusuario;";
-        $result = mysqli_query($conn,$sql);
-        mysqli_close($conn);
+        // Atualiza o campo de imagem no banco de dados
+        $sqlUpdateImagem = "UPDATE usuarios SET Foto = '$dirImagem' WHERE idusuario = $idUsuario";
+        $resultUpdateImagem = mysqli_query($conn, $sqlUpdateImagem);
+
+        if ($resultUpdateImagem) {
+            mysqli_close($conn);
+            header("location: ../usuarios.php"); // Redireciona após operação bem-sucedida
+            exit();
+        } else {
+            echo "Erro ao atualizar imagem: " . mysqli_error($conn); // Exibe erro de atualização de imagem
+        }
+    } else {
+        echo "Erro na operação SQL: " . mysqli_error($conn); // Exibe erro de operação SQL principal
     }
+} else {
+    echo "Função não especificada."; // Exibe mensagem se a função não estiver especificada na URL
+}
 
-    header("location: ../usuarios.php");
+mysqli_close($conn); // Fecha a conexão com o banco de dados
 
 ?>

@@ -13,47 +13,40 @@
 
     <body>
         
-        <?php echo montaMenu(); ?>
+            
 
-        <form method="POST" action="php/salvarUsuario.php?funcao=A&codigo=<?php echo $_GET['id']; ?>" enctype="multipart/form-data">
-        
-            <p>
-                <label for="iNome">Tipo de Usuário:</label>
-                <select name="nTipoUsuario" required>
+            <form method="POST" action="php/salvarUsuario.php?funcao=A&codigo=<?php echo $_GET['id']; ?>">
+            <div class="form-group">
+                <label for="iTipoUsuario">Tipo de Usuário:</label>
+                <select name="nTipoUsuario" class="form-control" required>
                     <?php echo tipoAcessoUsuario($_GET['id']); ?>                    
                 </select>
-            </p>
-
-            <p>
+            </div>
+            <div class="form-group">
                 <label for="iNome">Nome:</label>
-                <input type="text" id="iNome" name="nNome" value="<?php echo nomeUsuario($_GET['id']); ?>" maxlength="50">
-            </p>
-
-            <p>
+                <input type="text" class="form-control" id="iNome" name="nNome" value="<?php echo nomeUsuario($_GET['id']); ?>" maxlength="50" required>
+            </div>
+            <div class="form-group">
                 <label for="iLogin">Login:</label>
-                <input type="email" id="iLogin" name="nLogin" value="<?php echo loginUsuario($_GET['id']); ?>" maxlength="50">
-            </p>
-<!--
-            <p>
+                <input type="email" class="form-control" id="iLogin" name="nLogin" value="<?php echo loginUsuario($_GET['id']); ?>" maxlength="50" required>
+            </div>
+            
+            <div class="form-group">
                 <label for="iSenha">Senha:</label>
-                <input type="text" id="iSenha" name="nSenha" maxlength="6">
-            </p>
--->
-            <p>
+                <input type="text" class="form-control" id="iSenha" name="nSenha" maxlength="20">
+            </div>
+            
+            <div class="form-group">
                 <input type="checkbox" id="iAtivo" name="nAtivo" <?php echo ativoUsuario($_GET['id']); ?>>
                 <label for="iAtivo">Usuário Ativo</label>
-            </p>            
-
-            <p>
-                <img src="<?php echo fotoUsuario($_GET['id']); ?>" width="300px">
-                <label for="iFoto">Foto:</label>
-                <input type="file" id="iFoto" name="Foto" accept="image/*">
-            </p>
-
-
-            <button type="submit">Alterar</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </div>
 
         </form>
+
 
     </body>
 

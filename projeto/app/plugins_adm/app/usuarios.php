@@ -1,6 +1,6 @@
 <?php 
-  session_start();
-  include('php/funcoes.php');
+session_start();
+include('php/funcoes.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projeto Modelo - Usuários</title>
+  <title>Startup Connect - Usuários</title>
 
   <!-- CSS -->
   <?php include('partes/css.php'); ?>
@@ -41,27 +41,22 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                 <div class="row">
-
-                   <div class="col-9">
-                      <h3 class="card-title">Usuários</h3>
-                   </div>
-
-                   <div class="col-3" align="right">
+                <div class="row">
+                  <div class="col-9">
+                    <h3 class="card-title">Usuários</h3>
+                  </div>
+                  <div class="col-3" align="right">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoUsuarioModal">
-                        Novo Usuário
+                      Novo Usuário
                     </button>
+                  </div>
+                </div>
               </div>
-
-                 </div>
-              </div>
-
-             
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="tabela" class="table table-bordered table-hover">
                   <thead>
-                  <tr>
+                    <tr>
                       <th>ID</th>
                       <th>Nome</th>
                       <th>CPF</th>
@@ -72,20 +67,16 @@
                       <th>Status</th>
                       <th>Ativo</th>                
                       <th>Ações</th>
-                  </tr>
+                    </tr>
                   </thead>
                   <tbody>
-
-                  <?php echo listaUsuario(); ?>
-                  
+                    <?php echo listaUsuario(); ?>
                   </tbody>
-                  
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-            
           </div>
           <!-- /.col -->
         </div>
@@ -94,89 +85,62 @@
       <!-- /.container-fluid -->
 
       <div class="modal fade" id="novoUsuarioModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header bg-success">
-              <h4 class="modal-title">Novo Usuário</h4>
-              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-         <form method="POST" action="php/salvarUsuario.php?funcao=I" enctype="multipart/form-data">
-            
-         <div class="row">
-                    <div class="col-8">
-
-                      <div class="form-group">
-                        <label for="iNome">Nome:</label>
-                        <input type="text"  class="form-control" id="iNome" name="nNome" maxlength="50">
-                      </div>
-                    </div>
-
-                    <div class="col-4">
-                      <div class="form-group">
-
-                        <label for="iNome">Tipo de Usuário:</label>
-                          <select name="nTipoUsuario" class="form-control" required>
-                              <option value="">Selecione...</option>
-                              <?php echo optionTipoUsuario();?>
-                          </select>
-                      </div>
-
-                    </div>
-
-                   </div>
-
-                  <div class="col-8">
-                    <div class="form-group">
-                        <label for="iLogin">Login:</label>
-                        <input type="email" class="form-control" id="iLogin" name="nLogin" maxlength="50">
-                    </div>  
-                  </div>
-
-                  <div class="col-4">
-                    <div class="form-group">
-                        <label for="iSenha">Senha:</label>
-                        <input type="text" class="form-control" id="iSenha" name="nSenha" maxlength="6">
-                    </div>  
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-group">
-                        <label for="iFoto">Foto:</label>
-                        <input type="file" class="form-control" id="iFoto" name="Foto" accept="image/*">
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="form-group">
-                        <input type="checkbox"  id="iAtivo" name="nAtivo">
-                        <label for="iAtivo">Usuário Ativo</label>
-                    </div>
-                  </div>
-
-                <div class="modal-footer ">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-success">Salvar</button>
-            </div>
-            
-         </form>
-
-            </div>
-            
-            
-          </div>
-
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h4 class="modal-title">Novo Usuário</h4>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <!-- /.modal -->
+      <div class="modal-body">
+        <form method="POST" action="php/salvarUsuario.php?funcao=I">
+          <div class="form-group">
+            <label for="iNome">Nome:</label>
+            <input type="text" class="form-control" id="iNome" name="nNome" maxlength="50" required>
+          </div>
+          <div class="form-group">
+            <label for="iCpf">CPF:</label>
+            <input type="text" class="form-control" id="iCpf" name="nCpf" maxlength="14" required>
+          </div>
+          <div class="form-group">
+            <label for="iTelefone">Telefone:</label>
+            <input type="text" class="form-control" id="iTelefone" name="nTelefone" maxlength="15">
+          </div>
+          <div class="form-group">
+            <label for="iDataNascimento">Data de Nascimento:</label>
+            <input type="date" class="form-control" id="iDataNascimento" name="nDataNascimento">
+          </div>
+          <div class="form-group">
+            <label for="iEmail">Email:</label>
+            <input type="email" class="form-control" id="iEmail" name="nEmail" maxlength="50" required>
+          </div>
+          <div class="form-group">
+            <label for="iSenha">Senha:</label>
+            <input type="password" class="form-control" id="iSenha" name="nSenha" maxlength="20" required>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="iAtivo" name="nAtivo">
+            <label for="iAtivo">Usuário Ativo</label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-success">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 
     </section>
     <!-- /.content -->
   </div>
+  <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

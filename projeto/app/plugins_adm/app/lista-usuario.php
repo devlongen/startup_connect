@@ -17,7 +17,7 @@
         <?php echo montaMenu(); ?>
         
         <p>
-            <?php if($_SESSION['idTipoUsuario'] == 1){ ?>
+            <?php if($_SESSION['idusuario'] == 1){ ?>
 
                 <a href="novo-usuario.php">Novo Usuário</a>
 

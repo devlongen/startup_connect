@@ -21,7 +21,7 @@
 
     <body>
 
-        <?php echo montaMenu(); ?>
+        
 
         <form method="POST" action="php/salvarUsuario.php?funcao=I" enctype="multipart/form-data">
             
