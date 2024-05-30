@@ -94,33 +94,33 @@ include('php/funcoes.php');
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="php/salvarUsuario.php?funcao=I">
+        <form method="POST" action="php/salvarUsuario.php">
           <div class="form-group">
-            <label for="iNome">Nome:</label>
-            <input type="text" class="form-control" id="iNome" name="nNome" maxlength="50" required>
+            <label for="nome_usuario">Nome:</label>
+            <input type="text" class="form-control" id="iNome" name="nome_usuario" maxlength="50" required>
           </div>
           <div class="form-group">
-            <label for="iCpf">CPF:</label>
-            <input type="text" class="form-control" id="iCpf" name="nCpf" maxlength="14" required>
+            <label for="cpf_usuario">CPF:</label>
+            <input type="text" class="form-control" id="iCpf" name="cpf_usuario" maxlength="14" required>
           </div>
           <div class="form-group">
-            <label for="iTelefone">Telefone:</label>
-            <input type="text" class="form-control" id="iTelefone" name="nTelefone" maxlength="15">
+            <label for="telefone_usuario">Telefone:</label>
+            <input type="text" class="form-control" id="iTelefone" name="telefone_usuario" maxlength="15">
           </div>
           <div class="form-group">
-            <label for="iDataNascimento">Data de Nascimento:</label>
-            <input type="date" class="form-control" id="iDataNascimento" name="nDataNascimento">
+            <label for="data_nascimento_usuario">Data de Nascimento:</label>
+            <input type="date" class="form-control" id="iDataNascimento" name="data_nascimento_usuario">
           </div>
           <div class="form-group">
-            <label for="iEmail">Email:</label>
-            <input type="email" class="form-control" id="iEmail" name="nEmail" maxlength="50" required>
+            <label for="email_usuario">Email:</label>
+            <input type="email" class="form-control" id="iEmail" name="email_usuario" maxlength="50" required>
           </div>
           <div class="form-group">
-            <label for="iSenha">Senha:</label>
-            <input type="password" class="form-control" id="iSenha" name="nSenha" maxlength="20" required>
+            <label for="senha_usuario">Senha:</label>
+            <input type="password" class="form-control" id="iSenha" name="senha_usuario" maxlength="20" required>
           </div>
           <div class="form-group">
-            <input type="checkbox" id="iAtivo" name="nAtivo">
+            <input type="checkbox" id="iAtivo" name="status_usuario">
             <label for="iAtivo">Usuário Ativo</label>
           </div>
           <div class="modal-footer">
@@ -130,6 +130,9 @@ include('php/funcoes.php');
         </form>
       </div>
     </div>
+  </div>
+</div>
+
     <!-- /.modal-content -->
   </div>
   <!-- /.modal-dialog -->
