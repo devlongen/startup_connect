@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+// FALTANDO BOTAR IDUSUARIO NO LOG PROJETO E CRIAR O PROJETO PRO BANCO
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Inclui o arquivo de conexão com o banco de dados
     include_once('conexao_empresa.php');
