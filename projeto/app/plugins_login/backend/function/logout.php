@@ -1,6 +1,9 @@
 <?php 
     session_start();
-    session_destroy();
-
+    $_SESSION['usuario'] = array(
+        'nome' => "Usuário",
+        'email' => "Faça a sua conta!",
+        'status' => "Sem conta"
+    );
     header("Location: ../../../")
 ?>

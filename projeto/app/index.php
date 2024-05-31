@@ -1,7 +1,6 @@
 <?php 
     session_start();
     include_once('dist/php/controle_sessao.php');
-    include 'plugins_login/backend/function/redirect_login.php';
 ?>
 
 <!DOCTYPE html>

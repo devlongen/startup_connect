@@ -27,7 +27,7 @@
                         </li>
                         <li>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Meu perfil</a>
+                            <a class="dropdown-item" href="../app/plugins_login/backend/function/perfil.php">Meu perfil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="">Configurações da conta</a>
                             <div class="dropdown-divider"></div>

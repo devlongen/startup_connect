@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php 
+	session_start();
+	include_once("../plugins_login/backend/function/redirect_url.php");
+	redirect_investidor();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
