@@ -1,4 +1,7 @@
 <?php 
+
+// PROBLEMA QUE NÃO ESTÁ ACESSANDO ESSE ARQUIVO
+
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Inclui o arquivo de conexão com o banco de dados
