@@ -27,7 +27,7 @@
 
 <div class="container">
   <div class="form">
-    <form action="dist/php/insert_empresa.php">
+    <form action="dist/php/insert_empresa.php" method="POST">
       <div class="form-header">
         <div class="title">
           <h1>Cadastro da empresa</h1>
