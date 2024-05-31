@@ -19,8 +19,6 @@ if(isset($_GET['funcao'])) {
     $funcao = $_GET['funcao'];
     if ($funcao == "A") {
         // Monta a query SQL para atualização
-        var_dump($idUsuario);
-        die();
         $sql = "UPDATE usuario SET "
              . "nome_usuario = '$nome_usuario', "
              . "cpf_usuario = '$cpf_usuario', "
