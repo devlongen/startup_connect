@@ -49,7 +49,7 @@ function insert_termo($conexao, $termo_condicao) {
 }
 
 function insert_logprojeto($conexao, $cnpj) {
-    $stmt_logprojeto = $conexao->prepare("INSERT INTO log_projeto (data_hora_criada,descricao_log,status_log) VALUES (CURRENT_DATE(),?,'inativo')");
+    $stmt_logprojeto = $conexao->prepare("INSERT INTO log_projeto (data_hora_criada,descricao_log,status_log) VALUES (CURRENT_TIMESTAMP(),?,'inativo')");
     $stmt_logprojeto->bind_param("s", $cnpj);
     $stmt_logprojeto->execute();
     $fk_idlog_projeto = $conexao->insert_id;
