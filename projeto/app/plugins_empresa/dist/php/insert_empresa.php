@@ -37,6 +37,7 @@ function insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, 
     $stmt_empresa->bind_param("ssssssddsiii", $razao_social, $cnpj, $nome_fantasia, $endereco, $email, $data_abertura, $patrimonio, $meta_total, $descricao, $fk_idtermo_condicao, $fk_idusuario, $fk_idlog_projeto);
     $stmt_empresa->execute();
     $stmt_empresa->close();
+    //header("Location: Redirecionar para alguma página pedindo para aguardar validação da administração")
 }
 
 function insert_termo($conexao, $termo_condicao) {
