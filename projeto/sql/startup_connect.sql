@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 20/05/2024 às 02:51
+-- Tempo de geração: 01/06/2024 às 15:44
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS startup_connect;
 USE startup_connect;
--- Banco de dados: `startup_connect`
 --
 
 -- --------------------------------------------------------
@@ -31,11 +30,34 @@ USE startup_connect;
 
 CREATE TABLE `log_projeto` (
   `idlog_projeto` int(11) NOT NULL,
-  `data_hora_acessada` datetime NOT NULL,
+  `data_hora_criada` datetime DEFAULT NULL,
   `descricao_log` varchar(80) NOT NULL,
-  `status_log` varchar(20) NOT NULL,
-  `idusuario` int(11) NOT NULL
+  `status_log` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `log_projeto`
+--
+
+INSERT INTO `log_projeto` (`idlog_projeto`, `data_hora_criada`, `descricao_log`, `status_log`) VALUES
+(1, '2024-05-24 09:43:03', 'Descrição do log', 'ativo'),
+(2, NULL, 'asdfasdfasdfasdf', 'qwfasdfasdf'),
+(3, '2024-05-31 00:00:00', 'asdfsacasdcas', 'asdsadcasdc'),
+(4, '2024-05-31 00:00:00', 'inativo', 'adsfasdfasdfasdfsd'),
+(5, '2024-05-31 00:00:00', 'sfdfasdfadfasfd', 'inativo'),
+(6, '2024-05-31 00:00:00', 'qsdadasd', 'inativo'),
+(7, '2024-05-31 00:00:00', 'qsdadasd', 'inativo'),
+(8, '2024-05-31 00:00:00', 'qsdadasd', 'inativo'),
+(9, '2024-05-31 00:00:00', 'asdfasdfasdfasdfas', 'inativo'),
+(10, NULL, 'Testando o inserção de empresa', 'asdasdasd'),
+(11, NULL, 'iagao iago iago', 'iagao'),
+(12, '2024-05-31 00:00:00', '12345678910', 'inativo'),
+(13, '2024-05-31 21:54:53', '123123123', 'inativo'),
+(14, '2024-06-01 10:24:47', '123459999', 'inativo'),
+(15, '2024-06-01 10:26:16', '123459999', 'inativo'),
+(16, '2024-06-01 10:30:56', '123912399', 'inativo'),
+(17, '2024-06-01 10:36:12', '12931929', 'inativo'),
+(18, '2024-06-01 10:40:08', '129319239', 'inativo');
 
 -- --------------------------------------------------------
 
@@ -54,11 +76,22 @@ CREATE TABLE `projeto` (
   `data_abertura_site` date DEFAULT NULL,
   `patrimonio_oferecido` float NOT NULL,
   `meta_total` int(11) NOT NULL,
-  `valor_recebido` int(11) NOT NULL,
+  `desc_empresa` text NOT NULL,
+  `valor_recebido` int(11) DEFAULT NULL,
   `fk_idtermo_condicao` int(11) DEFAULT NULL,
   `fk_idusuario` int(11) DEFAULT NULL,
   `fk_idlog_projeto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `projeto`
+--
+
+INSERT INTO `projeto` (`idprojeto`, `razao_social`, `cnpj_projeto`, `nome_fantasia`, `endereco`, `email_corporativo`, `data_abertura_empresa`, `data_abertura_site`, `patrimonio_oferecido`, `meta_total`, `desc_empresa`, `valor_recebido`, `fk_idtermo_condicao`, `fk_idusuario`, `fk_idlog_projeto`) VALUES
+(3, 'Razão Social Exemplo Ltda', '12345678000100', 'Nome Fantasia Exemplo', 'Rua Exemplo, 123', 'contato@exemplo.com', '2022-01-01', '2024-05-24', 1000000, 5000000, 'Descrição da empresa', NULL, 1, 1, 1),
+(4, 'Minha Empresa Ltda', '12345678901234', 'Empresa Fantástica', 'Rua da Empresa, 123', 'contato@minhaempresa.com', '2024-06-01', '2024-06-01', 500000, 1000000, 'Uma breve descrição da minha empresa', NULL, 5, 1, 6),
+(5, 'KKKKKK', '12931929', 'shasuua', 'asuhuda', 'KK@kk', '2004-01-06', '2024-06-01', 123123, 123123, '0', NULL, 19, 1, 17),
+(6, 'adasdasd', '129319239', 'ahdasudauiago', 'iagosaudasd', 'aaa@asdasud', '2000-05-02', '2024-06-01', 100000000, 2345, 'INSERT FUNCIONANDO', NULL, 20, 1, 18);
 
 -- --------------------------------------------------------
 
@@ -83,6 +116,32 @@ CREATE TABLE `termo_condicao` (
   `idtermos_condicao` int(11) NOT NULL,
   `status_projeto` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `termo_condicao`
+--
+
+INSERT INTO `termo_condicao` (`idtermos_condicao`, `status_projeto`) VALUES
+(1, 'ESTOU DE ACORDO'),
+(2, 'teste'),
+(3, '1'),
+(4, '1'),
+(5, '1'),
+(6, '1'),
+(7, '1'),
+(8, '1'),
+(9, '1'),
+(10, '1'),
+(11, '1'),
+(12, '1'),
+(13, '1'),
+(14, '1'),
+(15, '1'),
+(16, '1'),
+(17, '1'),
+(18, '1'),
+(19, '1'),
+(20, '1');
 
 -- --------------------------------------------------------
 
@@ -118,7 +177,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `nome_usuario`, `cpf_usuario`, `telefone_usuario`, `data_nascimento_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`) VALUES
-(1, 'Iago', '123', '123', '2024-05-02', 'iago@teste.com', '$2y$10$NDhujBAeL.KulIhCneAhY.MMpXUjZuUOHI0KmlS0yRhjGYW7S7uca', 'Fundador');
+(1, 'Iago', '123', '123', '2024-05-02', 'iago@teste.com', '$2y$10$NDhujBAeL.KulIhCneAhY.MMpXUjZuUOHI0KmlS0yRhjGYW7S7uca', 'Fundador'),
+(2, 'Iago', '123', '47988071', '2005-12-07', 'iago@mudar', '$2y$10$55.ScEb5OMaGDLYzYnHDteX04h.eHbg1NJIlIx9XrY.ijrrOT2l4q', 'Investidor'),
+(3, 'iago', '321', '4781212', '2005-12-26', 'iago@aaa', '$2y$10$PSp5Q6sA4M93X356xrXqR.Tqc5JlwLbZzA9MNx7sONybce1c28H8S', 'Investidor');
 
 --
 -- Índices para tabelas despejadas
@@ -174,13 +235,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `log_projeto`
 --
 ALTER TABLE `log_projeto`
-  MODIFY `idlog_projeto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idlog_projeto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `projeto`
 --
 ALTER TABLE `projeto`
-  MODIFY `idprojeto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idprojeto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `projeto_tipo`
@@ -192,7 +253,7 @@ ALTER TABLE `projeto_tipo`
 -- AUTO_INCREMENT de tabela `termo_condicao`
 --
 ALTER TABLE `termo_condicao`
-  MODIFY `idtermos_condicao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtermos_condicao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tipo_projeto`
@@ -204,7 +265,7 @@ ALTER TABLE `tipo_projeto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para tabelas despejadas
