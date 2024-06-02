@@ -107,3 +107,32 @@ body {
     }
 }
 
+.botao_home {
+    background-color: #007bff; /* Azul vibrante */
+    border: none; /* Remove bordas padrão */
+    color: white; /* Texto branco para contraste */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove sublinhado de links */
+    display: inline-block; /* Exibição inline */
+    font-size: 16px; /* Tamanho do texto */
+    margin: 4px 2px; /* Margens para espaçamento */
+    cursor: pointer; /* Cursor de mãozinha para indicar clicável */
+    border-radius: 12px; /* Bordas arredondadas para um visual moderno */
+    transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.botao_home:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+.botao_home:before {
+    content: "← "; /* Adiciona um ícone de seta antes do texto */
+    font-size: 18px; /* Tamanho da seta */
+}
+
+.botao_home:active {
+    background-color: #004494; /* Cor mais escura quando pressionado */
+    transform: translateY(2px); /* Efeito de clique */
+}
+

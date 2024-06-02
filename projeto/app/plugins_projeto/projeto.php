@@ -38,8 +38,7 @@
 <section id="menu">
     <h2 class="section-title">Projetos</h2>
     <h3 class="section-subtitle">Fique por dentro das Novidades</h3>
-
-
+    <a href="../"><h3 class="botao_home">Voltar para o inicio!</h3></a>
     <div id="dishes">
         <div class="dish">
             <div class="dish-heart">
