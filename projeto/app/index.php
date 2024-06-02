@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include_once('dist/php/controle_sessao.php');
+    include_once("dist/php/count_startup.php");
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Clientes satisfeito</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up"><?php echo $contador_user;?></h1>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-primary mb-0">Projetos cadastrados</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="mb-0" data-toggle="counter-up"><?php echo $contador_empresa;?></h1>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Projetos investidos</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up"><?php echo $contador_investidor;?></h1>
                         </div>
                     </div>
                 </div>
