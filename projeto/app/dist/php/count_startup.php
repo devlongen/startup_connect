@@ -1,5 +1,4 @@
 <?php 
-session_start();
 include_once("conexao_db.php");
 
 $contador_empresa = count_empresa($conexao);

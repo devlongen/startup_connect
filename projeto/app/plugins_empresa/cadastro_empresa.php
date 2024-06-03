@@ -1,5 +1,4 @@
 <?php 
-  session_start();
   include_once("../plugins_login/backend/function/redirect_url.php");
 	redirect_fundador();
 ?>
