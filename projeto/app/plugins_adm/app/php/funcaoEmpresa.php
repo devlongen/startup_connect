@@ -3,15 +3,22 @@
 function listaProduto(){
 
     include("conexao.php");
-    $sql = "SELECT pro.idprojeto, "
-            ." pro.Descricao AS Projeto, "
-            ." pro.idCategoria, "
-            ." cat.Descricao AS Categoria, "
-            ." pro.Quantidade "
-        ." FROM produto pro "
-        ." INNER JOIN categoria cat "
-        ." ON cat.idCategoria = pro.idCategoria;";
-            
+    $sql = "SELECT idprojeto, "
+        . "razao_social, "
+        . "cnpj_projeto, "
+        . "cat.nome_fantasia, "
+        . "endereco, "
+        . "email_corporativo, "
+        . "data_abertura_empresa, "
+        . "data_abertura_site, "
+        . "patrimonio_oferecido, "
+        . "meta_total, "
+        . "valor_recebido, "
+        . "desc_empresa, "
+        . "data_hora_criada, "
+        . "status_log "
+    . "FROM projeto "
+     
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
