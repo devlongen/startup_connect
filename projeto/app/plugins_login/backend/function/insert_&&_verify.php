@@ -98,11 +98,11 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
                 // Senha incorreta
-                notify_user($senha_login_db);
+                echo "SENHA INCORRETA";
             }
         } else {
             // Usuário não encontrado
-            notify_user($email_login_db);
+            echo "usuario não existe";
         }
     } else {
         echo "Erro ao executar a consulta SQL: " . $stmt->error;
