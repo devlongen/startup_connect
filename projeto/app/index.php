@@ -1,12 +1,5 @@
 <?php 
     session_start();
-
-    // Executar somente uma vez
-    $_SESSION['usuario'] = array(
-        'nome' => "Usuário",
-        'email' => "Faça a sua conta!",
-        'status' => "Sem conta"
-    );
     include_once("dist/php/count_startup.php");
 ?>
 

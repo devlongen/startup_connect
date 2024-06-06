@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+# Redireciona URLs amigáveis para os arquivos correspondentes
+RewriteRule ^plugins_login/?$ plugins_login/tela_login.php [L]
+RewriteRule ^plugins_empresa/?$ plugins_empresa/cadastro_empresa.php [L]
+RewriteRule ^plugins_projeto/?$ plugins_projeto/projeto.php [L]
+
+# Bloqueia a navegação de diretórios e exibe um erro 403
+Options -Indexes
+
+# Bloqueia o acesso direto a arquivos PHP fora das regras de reescrita
+<FilesMatch "\.php$">
+    Order Deny,Allow
+    Deny from all
+    Allow from all
+</FilesMatch>

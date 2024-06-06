@@ -1,9 +1,13 @@
 <?php 
+// Inicia uma nova sessão ou resume uma sessão existente
 session_start();
 
+// Verifica se a requisição é do tipo POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Inclui o arquivo de conexão com o banco de dados
     include_once('conexao_empresa.php');
 
+    // Obtém os dados do formulário via método POST
     $razao_social = $_POST['razao-social'];
     $cnpj = $_POST['cnpj'];
     $email = $_POST['email'];
@@ -15,12 +19,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descricao = $_POST['desc-startup'];
     $termo_condicao = $_POST['termos-condicao'];
 
+    // Insere um registro na tabela log_projeto e obtém o ID gerado
     $fk_idlog_projeto = insert_logprojeto($conexao, $cnpj);
+    
+    // Insere um registro na tabela termo_condicao e obtém o ID gerado
     $fk_idtermo_condicao = insert_termo($conexao, $termo_condicao);
+    
+    // Obtém o ID do usuário atualmente logado
     $fk_idusuario = select_idusuario($conexao);
+    
+    // Insere um registro na tabela projeto (empresa)
     insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total, $descricao, $fk_idtermo_condicao, $fk_idusuario, $fk_idlog_projeto);
 }
 
+// Função para obter o ID do usuário atualmente logado
 function select_idusuario($conexao) {
     $stmt_idusuario = $conexao->prepare("SELECT idusuario FROM usuario WHERE nome_usuario = ?;");
     $stmt_idusuario->bind_param("s", $_SESSION['usuario']['nome']);
@@ -32,6 +44,7 @@ function select_idusuario($conexao) {
     return $fk_idusuario;
 }
 
+// Função para inserir um registro na tabela projeto (empresa)
 function insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, $endereco, $data_abertura, $patrimonio, $meta_total, $descricao, $fk_idtermo_condicao, $fk_idusuario, $fk_idlog_projeto) {
     $stmt_empresa = $conexao->prepare("INSERT INTO projeto (razao_social, cnpj_projeto, nome_fantasia, endereco, email_corporativo, data_abertura_empresa, data_abertura_site, patrimonio_oferecido, meta_total, desc_empresa, fk_idtermo_condicao, fk_idusuario, fk_idlog_projeto) VALUES (?, ?, ?, ?, ?, ?, CURRENT_DATE(), ?, ?, ?, ?, ?, ?)");
     $stmt_empresa->bind_param("ssssssddsiii", $razao_social, $cnpj, $nome_fantasia, $endereco, $email, $data_abertura, $patrimonio, $meta_total, $descricao, $fk_idtermo_condicao, $fk_idusuario, $fk_idlog_projeto);
@@ -40,6 +53,7 @@ function insert_empresa($conexao, $razao_social, $cnpj, $email, $nome_fantasia, 
     //header("Location: Redirecionar para alguma página pedindo para aguardar validação da administração")
 }
 
+// Função para inserir um registro na tabela termo_condicao
 function insert_termo($conexao, $termo_condicao) {
     $stmt_termo = $conexao->prepare("INSERT INTO termo_condicao (status_projeto) VALUES (?)");
     $stmt_termo->bind_param("s", $termo_condicao);
@@ -49,6 +63,7 @@ function insert_termo($conexao, $termo_condicao) {
     return $fk_idtermo_condicao;
 }
 
+// Função para inserir um registro na tabela log_projeto
 function insert_logprojeto($conexao, $cnpj) {
     $stmt_logprojeto = $conexao->prepare("INSERT INTO log_projeto (data_hora_criada, descricao_log, status_log) VALUES (CURRENT_TIMESTAMP(), ?, 'inativo')");
     $stmt_logprojeto->bind_param("s", $cnpj);
