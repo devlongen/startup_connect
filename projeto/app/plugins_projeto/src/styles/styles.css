@@ -127,7 +127,7 @@ body {
 }
 
 .botao_home:before {
-    content: "← "; /* Adiciona um ícone de seta antes do texto */
+    content: "🠔 "; /* Adiciona um ícone de seta antes do texto */
     font-size: 18px; /* Tamanho da seta */
 }
 
