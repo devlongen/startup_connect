@@ -127,15 +127,20 @@ $(function () {
 })
 
 $(function () {
+    // Inicializa o Summernote
+    $('#summernote').summernote();
+
     // Capturar o envio do formulário
     $('#empresa-form').on('submit', function(event) {
         event.preventDefault(); // Previne o envio padrão do formulário
 
         // Obtém o conteúdo do Summernote
-        var summernoteContent = $('#summernote').val();
+        var summernoteContent = $('#summernote').summernote('code');
+        console.log('Conteúdo do Summernote:', summernoteContent);
 
         // Obtém o nome da empresa
         var nomeEmpresa = $('#nome-empresa').val();
+        console.log('Nome da Empresa:', nomeEmpresa);
 
         // Envia o conteúdo do Summernote e o nome da empresa via AJAX
         $.ajax({
@@ -144,10 +149,14 @@ $(function () {
             data: { content: summernoteContent, empresa: nomeEmpresa },
             success: function(response) {
                 // Lógica de sucesso aqui (por exemplo, redirecionar ou mostrar uma mensagem)
+                console.log('Resposta do servidor:', response);
                 alert('Conteúdo do Summernote salvo com sucesso!');
             },
             error: function(xhr, status, error) {
                 // Lógica de erro aqui
+                console.log('Erro ao salvar conteúdo:', error);
+                console.log('Status:', status);
+                console.log('Resposta do servidor:', xhr.responseText);
                 alert('Ocorreu um erro ao salvar o conteúdo do Summernote.');
             }
         });
