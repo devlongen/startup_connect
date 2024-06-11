@@ -5,7 +5,7 @@ function optionCategoria(){
     $lista = "";
 
     include("conexao.php");
-    $sql = "SELECT idCategoria, Descricao FROM categoria ORDER BY Descricao;";        
+    $sql = "SELECT idprojeto, desc_empresa FROM projeto ORDER BY desc_empresa;";        
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
@@ -14,7 +14,7 @@ function optionCategoria(){
         
         foreach ($result as $coluna) {            
             //***Verificar os dados da consulta SQL
-            $lista .= '<option value="'.$coluna['idCategoria'].'">'.$coluna['Descricao'].'</option>';
+            $lista .= '<option value="'.$coluna['idprojeto'].'">'.$coluna['desc_empresa'].'</option>';
         }        
     } 
 

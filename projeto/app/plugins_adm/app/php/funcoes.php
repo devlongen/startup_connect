@@ -2,7 +2,7 @@
 
 include("funcaoCategoria.php");
 include("funcaoMenu.php");
-include("funcaoProduto.php");
+include("funcaoEmpresa.php");
 include("funcaoTipoUsuario.php");
 include("funcaoUsuario.php");
 

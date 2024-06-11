@@ -44,35 +44,31 @@
                 <div class="row">
                   
                   <div class="col-9">
-                    <h3 class="card-title">Produtos</h3>
+                    <h3 class="card-title">Empresas</h3>
                   </div>
                   
-                  <div class="col-3" align="right">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoProdutoModal">
-                      Novo Produto
-                    </button>
-                  </div>
 
-                </div>
-              </div>
-
-              
-
+      
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="tabela" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                      <th>ID</th>
-                      <th>Produto</th>
-                      <th>Categoria</th>
-                      <th>Quantidade</th>               
-                      <th>Ações</th>
+
+                      <th>Razão Social</th>
+                      <th>CNPJ Projeto</th>
+                      <th>Nome Fantasia</th>               
+                      <th>Email Corporativo</th>
+                      <th>Fundação</th>
+                      <th>Meta total</th>
+                      <th>Valor recebido</th>
+                      <th>Descrição</th>
+                      <th>Status</th>
                   </tr>
                   </thead>
                   <tbody>
 
-                  <?php echo listaProduto(); ?>
+                  <?php echo listaEmpresa(); ?>
                   
                   </tbody>
                   
@@ -88,68 +84,12 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
-
-      <div class="modal fade" id="novoProdutoModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header bg-success">
-              <h4 class="modal-title">Novo Produto</h4>
-              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="POST" action="php/salvarProduto.php?funcao=I" enctype="multipart/form-data">              
-                
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="iDescricao">Descrição:</label>
-                      <input type="text" class="form-control" id="iDescricao" name="nDescricao" maxlength="80">
-                    </div>
-                  </div>
-
-                  <div class="col-8">
-                    <div class="form-group">
-                      <label for="iCategoria">Categoria:</label>
-                      <select name="nCategoria" id="iCategoria" class="form-control" required>
-                        <option value="">Selecione...</option>
-                        <?php echo optionCategoria();?>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="iQuantidade">Quantidade:</label>
-                      <input type="number" class="form-control" id="iQuantidade" name="nQuantidade" min="0">
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-success">Salvar</button>
-                </div>
-                
-              </form>
-
-            </div>
-            
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-
     </section>
     <!-- /.content -->
   </div>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+  <aside class="contro    l-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
