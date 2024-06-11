@@ -65,8 +65,6 @@ include('php/funcoes.php');
                       <th>E-mail</th>
                       <th>Senha</th>
                       <th>Status</th>
-                      <th>Ativo</th>                
-                      <th>Ações</th>
                     </tr>
                   </thead>
                   <tbody>
