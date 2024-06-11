@@ -77,7 +77,16 @@
                                 <h3 class="card-title">Para continuar, precisaremos que você crie como sua startup será vista para nossos usuários, logo abaixo tem ferramentas!</h3>
                             </div>
                             <div class="card-body">
-                                <textarea id="summernote" name="content">Place <em>some</em> <u>text</u> <strong>here</strong></textarea>
+                                <textarea id="summernote" name="content">Faça a sua introdução</strong></textarea>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="summernote2" name="content">Imagens da sua Startup</textarea>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="summernote3" name="content">O objetivo do seu produto e suas qualidades.</textarea>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="summernote4" name="content">Acrescente um video complementar!</textarea>
                             </div>
                         </div>
                     </div>
@@ -125,42 +134,35 @@ $(function () {
         theme: "monokai"
     });
 })
-
 $(function () {
-    // Inicializa o Summernote
-    $('#summernote').summernote();
+    // Summernote
+    $('#summernote2').summernote()
 
-    // Capturar o envio do formulário
-    $('#empresa-form').on('submit', function(event) {
-        event.preventDefault(); // Previne o envio padrão do formulário
-
-        // Obtém o conteúdo do Summernote
-        var summernoteContent = $('#summernote').summernote('code');
-        console.log('Conteúdo do Summernote:', summernoteContent);
-
-        // Obtém o nome da empresa
-        var nomeEmpresa = $('#nome-empresa').val();
-        console.log('Nome da Empresa:', nomeEmpresa);
-
-        // Envia o conteúdo do Summernote e o nome da empresa via AJAX
-        $.ajax({
-            url: 'arquivos_summernote', // URL para salvar o conteúdo do Summernote
-            type: 'POST',
-            data: { content: summernoteContent, empresa: nomeEmpresa },
-            success: function(response) {
-                // Lógica de sucesso aqui (por exemplo, redirecionar ou mostrar uma mensagem)
-                console.log('Resposta do servidor:', response);
-                alert('Conteúdo do Summernote salvo com sucesso!');
-            },
-            error: function(xhr, status, error) {
-                // Lógica de erro aqui
-                console.log('Erro ao salvar conteúdo:', error);
-                console.log('Status:', status);
-                console.log('Resposta do servidor:', xhr.responseText);
-                alert('Ocorreu um erro ao salvar o conteúdo do Summernote.');
-            }
-        });
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+        mode: "htmlmixed",
+        theme: "monokai"
     });
-});
+})
+$(function () {
+    // Summernote
+    $('#summernote3').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+        mode: "htmlmixed",
+        theme: "monokai"
+    });
+})
+$(function () {
+    // Summernote
+    $('#summernote4').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+        mode: "htmlmixed",
+        theme: "monokai"
+    });
+})
 </script>
 
