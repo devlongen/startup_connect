@@ -29,8 +29,6 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../app/plugins_login/backend/function/perfil.php">Meu perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Configurações da conta</a>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../app/plugins_login/backend/function/logout.php">Logout</a>
                         </li>
                     </div>
@@ -75,8 +73,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Criação e Inovação</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Conectando sua startup com investidores</h1>
-                        <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
-                        <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                        <a href="plugins_empresa/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="plugins_projeto/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>
