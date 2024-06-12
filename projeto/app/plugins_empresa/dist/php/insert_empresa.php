@@ -65,7 +65,7 @@ function insert_termo($conexao, $termo_condicao) {
 
 // Função para inserir um registro na tabela log_projeto
 function insert_logprojeto($conexao, $cnpj) {
-    $stmt_logprojeto = $conexao->prepare("INSERT INTO log_projeto (data_hora_criada, descricao_log, status_log) VALUES (CURRENT_TIMESTAMP(), ?, 'inativo')");
+    $stmt_logprojeto = $conexao->prepare("INSERT INTO log_projeto (data_hora_criada, descricao_log, status_log) VALUES (CURRENT_TIMESTAMP(), ?, 'Inativo')");
     $stmt_logprojeto->bind_param("s", $cnpj);
     $stmt_logprojeto->execute();
     $fk_idlog_projeto = $stmt_logprojeto->insert_id;

@@ -4,7 +4,7 @@ include('funcoes.php');
 
 
 // NÃO ESTÁ RECEBENDO ID
-$idUsuario = $_POST["idusuario"] ?? null; // Inicializa como null caso não seja enviado
+$idUsuario = $_GET["codigo"] ?? null; // Inicializa como null caso não seja enviado
 $nome_usuario = $_POST["nome_alterar"] ?? "";
 $cpf_usuario  = $_POST["cpf_alterar"] ?? "";
 $telefone_usuario = $_POST["telefone_alterar"] ?? "";

@@ -114,7 +114,7 @@
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <!-- Summernote -->
-<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<script src="summernote\summernote-bs4.min.js"></script>
 <!-- CodeMirror -->
 <script src="../plugins/codemirror/codemirror.js"></script>
 <script src="../plugins/codemirror/mode/css/css.js"></script>
@@ -126,14 +126,24 @@
 <script>
 $(function () {
     // Summernote
-    $('#summernote').summernote()
+    $('#summernote').summernote({
+      height: 300,
+      toolbar: [
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']]
+      ]
+    })
 
     // CodeMirror
     CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
         mode: "htmlmixed",
         theme: "monokai"
     });
-})
+});
 $(function () {
     // Summernote
     $('#summernote2').summernote()
@@ -143,7 +153,7 @@ $(function () {
         mode: "htmlmixed",
         theme: "monokai"
     });
-})
+});
 $(function () {
     // Summernote
     $('#summernote3').summernote()
@@ -153,7 +163,7 @@ $(function () {
         mode: "htmlmixed",
         theme: "monokai"
     });
-})
+});
 $(function () {
     // Summernote
     $('#summernote4').summernote()
@@ -163,6 +173,6 @@ $(function () {
         mode: "htmlmixed",
         theme: "monokai"
     });
-})
+});
 </script>
 

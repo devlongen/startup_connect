@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-secondary elevation-4">
     <!-- Brand Logo -->
-    <a href="../app/usuarios.php" class="brand-link">
+    <a href="../../" class="brand-link">
       <span class="brand-text font-weight-light">Startup Connect</span>
     </a>
 
