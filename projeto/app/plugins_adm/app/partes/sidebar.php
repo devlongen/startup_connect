@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-secondary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-2">
     <!-- Brand Logo -->
     <a href="../../" class="brand-link">
       <span class="brand-text font-weight-light">Startup Connect</span>
