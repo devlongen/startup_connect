@@ -77,16 +77,16 @@
                                 <h3 class="card-title">Para continuar, precisaremos que você crie como sua startup será vista para nossos usuários, logo abaixo tem ferramentas!</h3>
                             </div>
                             <div class="card-body">
-                                <textarea id="summernote" name="content">Faça a sua introdução</strong></textarea>
+                                <textarea id="summernote" name="summernote">Faça a sua introdução</strong></textarea>
                             </div>
                             <div class="card-body">
-                                <textarea id="summernote2" name="content">Imagens da sua Startup</textarea>
+                                <textarea id="summernote2" name="summernote2">Imagens da sua Startup</textarea>
                             </div>
                             <div class="card-body">
-                                <textarea id="summernote3" name="content">O objetivo do seu produto e suas qualidades.</textarea>
+                                <textarea id="summernote3" name="summernote3">O objetivo do seu produto e suas qualidades.</textarea>
                             </div>
                             <div class="card-body">
-                                <textarea id="summernote4" name="content">Acrescente um video complementar!</textarea>
+                                <textarea id="summernote4" name="summernote4">Acrescente um video complementar!</textarea>
                             </div>
                         </div>
                     </div>

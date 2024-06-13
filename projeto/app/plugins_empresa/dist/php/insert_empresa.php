@@ -18,10 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $meta_total = $_POST['meta-total'];
     $descricao = $_POST['desc-startup'];
     $termo_condicao = $_POST['termos-condicao'];
-    $summernote_introducao = $_POST[''];
-    $summernote_imagens = $_POST[''];
-    $summernote_objetivo = $_POST[''];
-    $summernote_video = $_POST[''];
+    $summernote_introducao = $_POST['summernote'];
+    $summernote_imagens = $_POST['summernote2'];
+    $summernote_objetivo = $_POST['summernote3'];
+    $summernote_video = $_POST['summernote4'];
 
     // Insere um registro na tabela log_projeto e obtém o ID gerado
     $fk_idlog_projeto = insert_logprojeto($conexao, $cnpj);
@@ -60,7 +60,7 @@ function insert_empresa($conexao, $razao_social, $cnpj, $nome_fantasia, $enderec
     }
     $stmt_empresa->close();
     // Redirecionamento para uma página de sucesso ou aguardo de validação
-    // header("Location: sua_pagina.php");
+    header("Location: ../../pagina_espera.php");
 }
 
 // Função para inserir um registro na tabela termo_condicao

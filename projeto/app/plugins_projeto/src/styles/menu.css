@@ -95,7 +95,7 @@ body {
 /* Estilos para o subtítulo simples */
 #menu .section-subtitle {
     font-size: 24px; /* Tamanho do texto do subtítulo */
-    color: rgba(6, 158, 247, 0.979); /* Cor do texto */
+    color: #069ef7fa; /* Cor do texto */
     margin-bottom: 20px; /* Espaço abaixo do subtítulo */
 }
 
