@@ -25,4 +25,3 @@ $projetos = getProjetos($conexao);
 // Fechar conexão
 $conexao->close();
 ?>
-?>
