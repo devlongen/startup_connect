@@ -11,7 +11,7 @@
         header("Location: ../../../plugins_dashboard/dashboard_investidor.php");
     } elseif ($_SESSION['usuario']['status'] == "Admin") {
         // Se o status for "Admin", redireciona para a página de gerenciamento de usuários
-        header("Location: ../../../plugins_adm/app/usuarios.php");
+        header("Location: ../../../plugins_adm/app/painel.php");
     } else {
         // Se o status for qualquer outro valor, redireciona para a tela de login
         header("Location: ../../tela_login.php");

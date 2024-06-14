@@ -1,3 +1,5 @@
+<?php include_once("src/php/lista_projetos.php");?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,415 +23,43 @@
 <body>
     <nav class="navbar">
         <ul>
-
+            <!-- Seu menu aqui -->
         </ul>
     </nav>
 
-</body>
+    <div class="aba-pesquisa">
+        <input type="text" class="aba-pesquisa__input" placeholder="Pesquisar...">
+        <img src="src/images/lupa (1).png" alt="Ícone de pesquisa" class="aba-pesquisa__lupa">
+    </div>
 
-</html>
-
-<div class="aba-pesquisa">
-    <input type="text" class="aba-pesquisa__input" placeholder="Pesquisar...">
-    <img src="src/images/lupa (1).png" alt="Ícone de pesquisa" class="aba-pesquisa__lupa">
-</div>
-
-
-<section id="menu">
-    <h2 class="section-title">Projetos</h2>
-    <h3 class="section-subtitle">Fique por dentro das Novidades</h3>
-    <a href="../"><h3 class="botao_home">Voltar para o inicio!</h3></a>
-    <div id="dishes">
-        <div class="dish">
-            <div class="dish-heart">
-                <i class=""></i>
-            </div>
-
-            <img src="src/images/1.png" class="dish-image" alt="">
-
-            <h3 class="dish-title">
-                Jogos do Momento
-            </h3>
-
-            <span class="dish-description">
-                Tudo sobre Jogos de entretenimento
-            </span>
-
-            <div class="dish-rate">
-                <i class=""></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span> </span>
-            </div>
-
-            <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-       
-
-        <div class="dish">
-            <div class="dish-heart">
-                <i class=""></i>
-            </div>
-
-            <img src="src/images/1.png" class="dish-image" alt="">
-
-            <h3 class="dish-title">
-                Tecnologia
-            </h3>
-
-            <span class="dish-description">
-                Tudo sobre Tecnologia
-            </span>
-
-            <div class="dish-rate">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span> </span>
-            </div>
-
-            <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-
-        <div class="dish">
-            <div class="dish-heart">
-                <i class=""></i>
-            </div>
-
-            <img src="src/images/1.png" class="dish-image" alt="">
-
-            <h3 class="dish-title">
-                Esporte
-            </h3>
-
-            <span class="dish-description">
-                Tudo sobre Esporte
-            </span>
-
-            <div class="dish-rate">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span> </span>
-            </div>
-
-            <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
+    <section id="menu">
+        <h2 class="section-title">Projetos</h2>
+        <h3 class="section-subtitle">Fique por dentro das Novidades</h3>
+        <a href="../"><h3 class="botao_home">Voltar para o inicio!</h3></a>
 
         <div id="dishes">
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class=""></i>
-                </div>
-
-                <img src="src/images/1.png" class="dish-image" alt="">
-
-                <h3 class="dish-title">
-                    Jogos do Momento
-                </h3>
-
-                <span class="dish-description">
-                    Tudo sobre Jogos de entretenimento
-                </span>
-
-                <div class="dish-rate">
-                    <i class=""></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span> </span>
-                </div>
-
-                <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class=""></i>
-                </div>
-
-                <img src="src/images/1.png" class="dish-image" alt="">
-
-                <h3 class="dish-title">
-                    Tecnologia
-                </h3>
-
-                <span class="dish-description">
-                    Tudo sobre Tecnologia
-                </span>
-
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span> </span>
-                </div>
-
-                <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>Saiba MAIS</i>
-                </button>
-            </div>
-        </div>
-
-            <div class="dish">
-                <div class="dish-heart">
-                    <i class=""></i>
-                </div>
-
-                <img src="src/images/1.png" class="dish-image" alt="">
-
-                <h3 class="dish-title">
-                    Esporte
-                </h3>
-
-                <span class="dish-description">
-                    Tudo sobre Esporte
-                </span>
-
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span> </span>
-                </div>
-
-                <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>Saiba MAIS</i>
-                </button>
-            </div>
-        </div>
-
-            <div id="dishes">
+            <?php foreach ($projetos as $projeto):?>
                 <div class="dish">
                     <div class="dish-heart">
                         <i class=""></i>
                     </div>
-
-                    <img src="src/images/1.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Jogos do Momento
-                    </h3>
-
-                    <span class="dish-description">
-                        Tudo sobre Jogos de entretenimento
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class=""></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span> </span>
-                    </div>
-
+                    <img src="src/images/1.png" class="dish-image" alt="Imagem do projeto">
+                    <h3 class="dish-title"><?php echo $projeto['nome_fantasia']; ?></h3>
+                    <span class="dish-description"><?php echo $projeto['desc_empresa']; ?></span>
                     <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>Saiba MAIS</i>
-                </button>
-            </div>
-        </div>
-
-                <div class="dish">
-                    <div class="dish-heart">
-                        <i class=""></i>
+                        <h4> </h4>
+                    <form action="pagina_destino.php" method="post">
+                        <input type="hidden" name="idprojeto" value="<?php echo $projeto['idprojeto']; ?>">
+                        <button type="submit" class="btn-default">
+                            <i>SAIBA MAIS</i>
+                        </button>
+                    </form>
                     </div>
-
-                    <img src="src/images/1.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Tecnologia
-                    </h3>
-
-                    <span class="dish-description">
-                        Tudo sobre Tecnologia
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span> </span>
-                    </div>
-
-                    <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>Saiba MAIS</i>
-                </button>
-            </div>
+                </div>
+            <?php endforeach;?>
         </div>
 
-                <div class="dish">
-                    <div class="dish-heart">
-                        <i class=""></i>
-                    </div>
-
-                    <img src="src/images/1.png" class="dish-image" alt="">
-
-                    <h3 class="dish-title">
-                        Esporte
-                    </h3>
-
-                    <span class="dish-description">
-                        Tudo sobre Esporte
-                    </span>
-
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span> </span>
-                    </div>
-
-                    <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-
-                <div id="dishes">
-                    <div class="dish">
-                        <div class="dish-heart">
-                            <i class=""></i>
-                        </div>
-
-                        <img src="src/images/1.png" class="dish-image" alt="">
-
-                        <h3 class="dish-title">
-                            Jogos do Momento
-                        </h3>
-
-                        <span class="dish-description">
-                            Tudo sobre Jogos de entretenimento
-                        </span>
-
-                        <div class="dish-rate">
-                            <i class=""></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span> </span>
-                        </div>
-
-                        <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-
-                    <div class="dish">
-                        <div class="dish-heart">
-                            <i class=""></i>
-                        </div>
-
-                        <img src="src/images/1.png" class="dish-image" alt="">
-
-                        <h3 class="dish-title">
-                            Tecnologia
-                        </h3>
-
-                        <span class="dish-description">
-                            Tudo sobre Tecnologia
-                        </span>
-
-                        <div class="dish-rate">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span> </span>
-                        </div>
-
-                        <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-
-                    <div class="dish">
-                        <div class="dish-heart">
-                            <i class=""></i>
-                        </div>
-
-                        <img src="src/images/1.png" class="dish-image" alt="">
-
-                        <h3 class="dish-title">
-                            Esporte
-                        </h3>
-
-                        <span class="dish-description">
-                            Tudo sobre Esporte
-                        </span>
-
-                        <div class="dish-rate">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span> </span>
-                        </div>
-
-                        <div class="dish-price">
-                <h4> </h4>
-                <button class="btn-default">
-                    <i>SAIBA MAIS</i>
-                </button>
-            </div>
-        </div>
-
-
-</section>
+    </section>
 
 </body>
 
