@@ -122,6 +122,8 @@
 <script src="../plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="assets/javascript/script.js"></script>
+
 <!-- Page specific script -->
 <script>
 $(function () {
@@ -233,4 +235,3 @@ $(function () {
     });
 });
 </script>
-
