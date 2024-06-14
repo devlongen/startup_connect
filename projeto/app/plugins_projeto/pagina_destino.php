@@ -73,6 +73,21 @@
             line-height: 1.8;
         }
 
+        .pair {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .pair .item {
+            width: calc(50% - 10px);
+        }
+
+        .pair .item:first-child {
+            margin-right: 10px;
+        }
+
         .back-btn {
             margin-top: 20px;
             text-align: center;
@@ -129,40 +144,66 @@
                     // Exibir os detalhes do projeto
                     $projeto = $result->fetch_assoc();
             ?>
-                    <label>Razão Social:</label>
-                    <p><?php echo $projeto['razao_social']; ?></p>
+                    <div class="pair">
+                        <div class="item">
+                            <label>Razão Social:</label>
+                            <p><?php echo $projeto['razao_social']; ?></p>
+                        </div>
+                        <div class="item">
+                            <label>Nome Fantasia:</label>
+                            <p><?php echo $projeto['nome_fantasia']; ?></p>
+                        </div>
+                    </div>
 
-                    <label>CNPJ:</label>
-                    <p><?php echo $projeto['cnpj_projeto']; ?></p>
+                    <div class="pair">
+                        <div class="item">
+                            <label>CNPJ:</label>
+                            <p><?php echo $projeto['cnpj_projeto']; ?></p>
+                        </div>
+                        <div class="item">
+                            <label>Email Corporativo:</label>
+                            <p><?php echo $projeto['email_corporativo']; ?></p>
+                        </div>
+                    </div>
 
-                    <label>Nome Fantasia:</label>
-                    <p><?php echo $projeto['nome_fantasia']; ?></p>
+                    <div class="pair">
+                        <div class="item">
+                            <label>Endereço:</label>
+                            <p><?php echo $projeto['endereco']; ?></p>
+                        </div>
+                        <div class="item">
+                            <label>Data de Abertura da Empresa:</label>
+                            <p><?php echo $projeto['data_abertura_empresa']; ?></p>
+                        </div>
+                    </div>
 
-                    <label>Endereço:</label>
-                    <p><?php echo $projeto['endereco']; ?></p>
+                    <div class="pair">
+                        <div class="item">
+                            <label>Data de Abertura do Site:</label>
+                            <p><?php echo $projeto['data_abertura_site']; ?></p>
+                        </div>
+                        <div class="item">
+                            <label>Patrimônio Oferecido:</label>
+                            <p><?php echo $projeto['patrimonio_oferecido']; ?>%</p>
+                        </div>
+                    </div>
 
-                    <label>Email Corporativo:</label>
-                    <p><?php echo $projeto['email_corporativo']; ?></p>
+                    <div class="pair">
+                        <div class="item">
+                            <label>Meta Total:</label>
+                            <p>R$ <?php echo number_format($projeto['meta_total'], 2, ',', '.'); ?></p>
+                        </div>
+                        <div class="item">
+                            <label>Valor Recebido:</label>
+                            <p>R$ <?php echo number_format($projeto['valor_recebido'], 2, ',', '.'); ?></p>
+                        </div>
+                    </div>
 
-                    <label>Data de Abertura da Empresa:</label>
-                    <p><?php echo $projeto['data_abertura_empresa']; ?></p>
+                    <div class="content">
+                        <label>Descrição da Empresa:</label>
+                        <div class="text"><?php echo $projeto['desc_empresa']; ?></div>
+                    </div>
 
-                    <label>Data de Abertura do Site:</label>
-                    <p><?php echo $projeto['data_abertura_site']; ?></p>
-
-                    <label>Patrimônio Oferecido:</label>
-                    <p><?php echo $projeto['patrimonio_oferecido']; ?></p>
-
-                    <label>Meta Total:</label>
-                    <p><?php echo $projeto['meta_total']; ?></p>
-
-                    <label>Descrição da Empresa:</label>
-                    <p><?php echo $projeto['desc_empresa']; ?></p>
-
-                    <label>Valor Recebido:</label>
-                    <p><?php echo $projeto['valor_recebido']; ?></p>
-
-                    <!-- Novos campos adicionados -->
                     <div class="content">
                         <label>Introdução:</label>
                         <div class="text"><?php echo $projeto['summernote_introducao']; ?></div>
