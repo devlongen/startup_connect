@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 
 --
 CREATE DATABASE IF NOT EXISTS startup_connect;
-USE startup_connect
+USE startup_connect;
 --
 
 -- --------------------------------------------------------
