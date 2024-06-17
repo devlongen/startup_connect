@@ -98,7 +98,7 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
                 // Senha incorreta
-                echo "SENHA INCORRETA";
+                echo "email ou senha estão incorretos"
             }
         } else {
             // Usuário não encontrado
