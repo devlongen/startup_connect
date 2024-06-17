@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
 # Verifica se o formulário de cadastro foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
     # Inclui o arquivo de conexão com o banco de dados
@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["cadastro_db"])) {
     # Chama a função de inserção no banco de dados
     insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadastro_db, $cpf_cadastro_db, $telefone_cadastro_db, $data_cadastro_db, $tipo_usuario_db);
 }
+
 # Verifica se o formulário de login foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_db"])) {
     require_once('../../../conn_db.php');
@@ -57,12 +58,12 @@ function insert_db($conexao, $nome_cadastro_db, $email_cadastro_db, $senha_cadas
     }else{
         header("Location: ../../../plugins_projeto/projeto.php");
     }
+    exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
 }
 
-// Função para verificar o login do usuário
+# Função para verificar o login do usuário
 function verify_login_db($conexao, $email_login_db, $senha_login_db)
 {
-
     // Prepara a consulta SQL para selecionar o usuário pelo email
     $stmt = $conexao->prepare("SELECT idusuario, nome_usuario, email_usuario, senha_usuario, status_usuario FROM usuario WHERE email_usuario = ?");
     // Verifica se a preparação da consulta falhou
@@ -76,7 +77,7 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
     // Executa a consulta SQL
     if ($stmt->execute()) {
         // Vincula o resultado da consulta a variáveis
-        $stmt->bind_result($id_usuario,$nome_usuario, $email_usuario, $senha_usuario, $tipo_usuario);
+        $stmt->bind_result($id_usuario, $nome_usuario, $email_usuario, $senha_usuario, $tipo_usuario);
         // Obtém o resultado da consulta
         $stmt->fetch();
         // Verifica se o usuário foi encontrado
@@ -91,14 +92,14 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
                     'email' => $email_usuario
                 );
                 if ($_SESSION['usuario']['status'] == "Fundador"){
-                    header("Location: ../../../plugins_dashboard\dashboard_fundador.php");
+                    header("Location: ../../../plugins_dashboard/dashboard_fundador.php");
                 }else{
-                    header("Location: ../../../plugins_dashboard\dashboard_investidor.php");
+                    header("Location: ../../../plugins_dashboard/dashboard_investidor.php");
                 }
                 exit(); // Certifica-se de que o script não continue a ser executado após o redirecionamento
             } else {
                 // Senha incorreta
-                echo "email ou senha estão incorretos"
+                echo "email ou senha estão incorretos";
             }
         } else {
             // Usuário não encontrado
@@ -109,6 +110,8 @@ function verify_login_db($conexao, $email_login_db, $senha_login_db)
         return false;
     }
 }
+
 function notify_user(){
     return "Este email não existe";
 }
+?>
