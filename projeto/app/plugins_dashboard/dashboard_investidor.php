@@ -103,7 +103,7 @@
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
 												<h6 class="fw-bold text-uppercase text-success op-8">Total investimento</h6>
-												<h3 class="fw-bold">$9.782</h3>
+												<h3 class="fw-bold">R$9.782</h3>
 											</div>
 										</div>
 										<div class="col-md-8">
@@ -124,7 +124,7 @@
 								</div>
 								<div class="card-body pb-0">
 									<div class="mb-4 mt-2">
-										<h1>$4,578.58</h1>
+										<h1>R$4,578.58</h1>
 									</div>
 									<div class="pull-in">
 										<canvas id="dailySalesChart"></canvas>
