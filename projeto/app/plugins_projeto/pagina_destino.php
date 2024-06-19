@@ -125,7 +125,7 @@
                 include_once("src/php/conexao_projetos.php");
 
                 // Consulta SQL para obter os detalhes do projeto com base no idprojeto
-                $sql = "SELECT * FROM projeto WHERE idprojeto = ?";
+                $sql = "SELECT p.idprojeto,p.nome_fantasia, p.desc_empresa FROM projeto p JOIN log_projeto lp ON p.fk_idlog_projeto = lp.idlog_projeto WHERE lp.status_log = 'Ativo';";
 
                 // Preparar a consulta
                 $stmt = $conexao->prepare($sql);
