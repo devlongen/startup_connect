@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="dist/img/team-1.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
     <!-- Topbar End -->
 
     <!-- Navbar & Carousel-->
-    <?php include('partes/navbar.php'); ?>
+    <?php include('dist/php/navbar.php'); ?>
 
 
 

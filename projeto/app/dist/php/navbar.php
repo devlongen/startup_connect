@@ -11,14 +11,14 @@
             <li class="nav-item dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false">
                     <div class="avatar-sm">
-                        <img src="../app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="90px" style="padding-top: 15px;" alt="..." class="avatar-img rounded-circle">
+                        <img src="dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="90px" style="padding-top: 15px;" alt="..." class="avatar-img rounded-circle">
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">
                         <li>
                             <div class="user-box">
-                                <div><img src="../app/dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="50px" alt="image profile" class="avatar-img rounded"></div>
+                                <div><img src="dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="50px" alt="image profile" class="avatar-img rounded"></div>
                                 <div class="u-text">
                                     <h4><?php echo $_SESSION['usuario']['nome']?></h4>
                                     <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p>
@@ -27,16 +27,16 @@
                         </li>
                         <li>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../app/plugins_login/backend/function/perfil.php">Meu perfil</a>
+                            <a class="dropdown-item" href="../plugins_login/backend/function/perfil.php">Meu perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../app/plugins_login/backend/function/logout.php">Logout</a>
+                            <a class="dropdown-item" href="../plugins_login/backend/function/logout.php">Logout</a>
                         </li>
                     </div>
                 </ul>
             </li>
                 <a href="" class="nav-item nav-link active">Home</a>
-                <a href="plugins_projeto/projeto.php" class="nav-item nav-link">Projetos</a>
-                <a href="plugins_login/tela_login.php" class="nav-item nav-link">Login</a>
+                <a href="pages/projeto.php" class="nav-item nav-link">Projetos</a>
+                <a href="pages/tela_login.php" class="nav-item nav-link">Login</a>
 
                 <div class="nav-item dropdown">
 
@@ -44,8 +44,8 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
                     <div class="dropdown-menu m-0">
-                        <a href="plugins_empresa/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
-                        <a href="plugins_projeto/projeto.php" class="dropdown-item">Quero investir</a>
+                        <a href="pages/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
+                        <a href="pages/projeto.php" class="dropdown-item">Quero investir</a>
                     </div>
                 </div>
 
@@ -62,8 +62,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Você pode começar Agora</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Invista em negócios Promissores</h1>
-                        <a href="plugins_empresa/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
-                        <a href="plugins_projeto/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                        <a href="pages/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="pages/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>
@@ -73,8 +73,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-3 animated slideInDown">Criação e Inovação</h5>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">Conectando sua startup com investidores</h1>
-                        <a href="plugins_empresa/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
-                        <a href="plugins_projeto/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                        <a href="pages/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="pages/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
                     </div>
                 </div>
             </div>

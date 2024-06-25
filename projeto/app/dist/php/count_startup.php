@@ -1,5 +1,5 @@
 <?php 
-include_once("conexao_db.php");
+include_once("connection.php");
 
 $contador_empresa = count_empresa($conexao);
 $contador_investidor = count_investidor($conexao);
