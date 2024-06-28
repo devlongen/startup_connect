@@ -27,9 +27,9 @@
                         </li>
                         <li>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../plugins_login/backend/function/perfil.php">Meu perfil</a>
+                            <a class="dropdown-item" href="dist/plugins/plugins_login/backend/function/perfil.php">Meu perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../plugins_login/backend/function/logout.php">Logout</a>
+                            <a class="dropdown-item" href="dist/plugins/plugins_login/backend/function/logout.php">Logout</a>
                         </li>
                     </div>
                 </ul>
