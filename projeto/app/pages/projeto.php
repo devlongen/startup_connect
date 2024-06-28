@@ -1,4 +1,4 @@
-<?php include_once("src/php/lista_projetos.php");?>
+<?php include_once("../dist/plugins/plugins_projeto/src/php/lista_projetos.php");?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/styles/styles.css">
-    <link rel="stylesheet" href="src/styles/navbar.css">
-    <link rel="stylesheet" href="src/styles/menu.css">
+    <link rel="stylesheet" href="../dist/plugins/plugins_projeto/src/styles/styles.css">
+    <link rel="stylesheet" href="../dist/plugins/plugins_projeto/src/styles/navbar.css">
+    <link rel="stylesheet" href="../dist/plugins/plugins_projeto/src/styles/menu.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -29,7 +29,7 @@
 
     <div class="aba-pesquisa">
         <input type="text" class="aba-pesquisa__input" placeholder="Pesquisar...">
-        <img src="src/images/lupa (1).png" alt="Ícone de pesquisa" class="aba-pesquisa__lupa">
+        <img src="../dist/plugins/plugins_projeto/src/images/lupa (1).png" alt="Ícone de pesquisa" class="aba-pesquisa__lupa">
     </div>
 
     <section id="menu">
@@ -43,7 +43,7 @@
                     <div class="dish-heart">
                         <i class=""></i>
                     </div>
-                    <img src="src/images/1.png" class="dish-image" alt="Imagem do projeto">
+                    <img src="../dist/plugins/plugins_projeto/src/images/1.png" class="dish-image" alt="Imagem do projeto">
                     <h3 class="dish-title"><?php echo $projeto['nome_fantasia']; ?></h3>
                     <span class="dish-description"><?php echo $projeto['desc_empresa']; ?></span>
                     <div class="dish-price">

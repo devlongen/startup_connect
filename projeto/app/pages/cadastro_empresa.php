@@ -1,5 +1,5 @@
 <?php 
-  include_once("../plugins_login/backend/function/redirect_url.php");
+  include_once("../dist/plugins/plugins_login/backend/function/redirect_url.php");
   redirect_fundador();
 ?>
 <!DOCTYPE html>
@@ -13,22 +13,22 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../dist/plugins/plugins_empresa/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/plugins/plugins_empresa/dist/css/adminlte.min.css">
   <!-- Summernote -->
-  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="../dist/plugins/plugins_empresa/summernote/summernote-bs4.min.css">
   <!-- CodeMirror -->
-  <link rel="stylesheet" href="../plugins/codemirror/codemirror.css">
-  <link rel="stylesheet" href="../plugins/codemirror/theme/monokai.css">
+  <link rel="stylesheet" href="../dist/plugins/plugins_empresa/plugins/codemirror/codemirror.css">
+  <link rel="stylesheet" href="../dist/plugins/plugins_empresa/plugins/codemirror/theme/monokai.css">
   
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../dist/plugins/plugins_empresa/assets/css/style.css">
 </head>
 <body>
 
 <div class="container">
         <div class="form">
-            <form id="empresa-form" action="dist/php/insert_empresa.php" method="POST">
+            <form id="empresa-form" action="../dist/plugins/plugins_empresa/dist/php/insert_empresa.php" method="POST">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro da empresa</h1>
@@ -103,26 +103,22 @@
         </div>
     </div>
 
-
-          
-
-
 <!-- jQuery -->
-<script src="../plugins/jquery/jquery.min.js"></script>
+<script src="../dist/plugins/plugins_empresa/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../dist/plugins/plugins_empresa/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../dist/plugins/plugins_empresa/dist/js/adminlte.min.js"></script>
 <!-- Summernote -->
-<script src="summernote\summernote-bs4.min.js"></script>
+<script src="../dist/plugins/plugins_empresa/summernote\summernote-bs4.min.js"></script>
 <!-- CodeMirror -->
-<script src="../plugins/codemirror/codemirror.js"></script>
-<script src="../plugins/codemirror/mode/css/css.js"></script>
-<script src="../plugins/codemirror/mode/xml/xml.js"></script>
-<script src="../plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../dist/plugins/plugins_empresa/plugins/codemirror/codemirror.js"></script>
+<script src="../dist/plugins/plugins_empresa/plugins/codemirror/mode/css/css.js"></script>
+<script src="../dist/plugins/plugins_empresa/plugins/codemirror/mode/xml/xml.js"></script>
+<script src="../dist/plugins/plugins_empresa/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<script src="assets/javascript/script.js"></script>
+<script src="../dist/plugins/plugins_empresa/dist/js/demo.js"></script>
+<script src="../dist/plugins/plugins_empresa/assets/javascript/script.js"></script>
 
 <!-- Page specific script -->
 <script>
