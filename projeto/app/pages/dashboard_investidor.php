@@ -1,6 +1,6 @@
 <?php 
-	include_once("../plugins_login/backend/function/redirect_url.php");
-	redirect_investidor();
+	include_once("../dist/plugins/plugins_login/backend/function/functions.php");
+	Redirect_investidor();
 ?>
 <!DOCTYPE html>
 <html lang="en">

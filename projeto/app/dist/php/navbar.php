@@ -1,3 +1,22 @@
+<?php 
+include '../plugins/plugins_login/function/functions.php';  
+if (isset($_GET['func'])) {
+    $funcName = $_GET['func'];
+
+    // Crie uma instância da classe Login_User
+    $objeto = new Login_User();
+
+    // Verifique se a função existe na classe
+    if (method_exists($objeto, $funcName)) {
+        // Chame a função dinamicamente
+        $objeto->$funcName();
+    } else {
+        echo "Função não encontrada!";
+    }
+} else {
+    echo "erro";
+}
+?>
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
         <a href="" class="navbar-brand p-0">
@@ -27,9 +46,9 @@
                         </li>
                         <li>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="dist/plugins/plugins_login/backend/function/perfil.php">Meu perfil</a>
+                            <a class="dropdown-item" href="index.php?func=Perfil">Meu perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="dist/plugins/plugins_login/backend/function/logout.php">Logout</a>
+                            <a class="dropdown-item" href="index.php?func=Logout">Logout</a>
                         </li>
                     </div>
                 </ul>

@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  include('php/funcoes.php');
+  include('../dist/plugins/plugins_adm/php/funcoes.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
   <title>Projeto Modelo - Dashboard</title>
 
   <!-- CSS -->
-  <?php include('partes/css.php'); ?>
+  <?php include('../dist/plugins/plugins_adm/partes/css.php'); ?>
   <!-- Fim CSS -->
 
 </head>
@@ -19,11 +19,11 @@
 <div class="wrapper">
 
   <!-- Navbar -->
-  <?php include('partes/navbar.php'); ?>
+  <?php include('../dist/plugins/plugins_adm/partes/navbar.php'); ?>
   <!-- Fim Navbar -->
 
   <!-- Sidebar -->
-  <?php include('partes/sidebar.php'); ?>
+  <?php include('../dist/plugins/plugins_adm/partes/sidebar.php'); ?>
   <!-- Fim Sidebar -->
 
   <!-- Content Wrapper. Contains page content -->
