@@ -1,0 +1,7 @@
+FROM php:8.4
+
+WORKDIR /github/startup_connect/
+
+COPY ./src /github/startup_connect/
+
+RUN docker-php-ext-install pdo pdo_mysql
