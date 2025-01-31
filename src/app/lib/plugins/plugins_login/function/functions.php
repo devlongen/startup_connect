@@ -2,10 +2,12 @@
 // Inicia uma nova sessão ou resume uma sessão existente
 session_start();
 
-class Login_User {
-    
+class Login_User
+{
+
     // Função para redirecionar usuários com base no status da sessão
-    public function Perfil() {
+    public function Perfil(): never
+    {
         if ($_SESSION['usuario']['status'] == "Fundador") {
             header("Location: pages/dashboard_fundador.php");
         } elseif ($_SESSION['usuario']['status'] == "Investidor") {
@@ -20,18 +22,20 @@ class Login_User {
     }
 
     // Função para fazer logout e redefinir os dados do usuário na sessão
-    public function Logout() {
+    public function Logout(): never
+    {
         $_SESSION['usuario'] = array(
-            'nome' => "Usuário", 
-            'email' => "Faça a sua conta!", 
-            'status' => "Sem conta" 
+            'nome' => "Usuário",
+            'email' => "Faça a sua conta!",
+            'status' => "Sem conta"
         );
         header("Location: ../");
         exit();
     }
 
     // Função para redirecionar usuários que não são Fundadores
-    public function Redirect_fundador() {
+    public function Redirect_fundador(): void
+    {
         if ($_SESSION['usuario']['status'] != "Fundador") {
             header("Location: ../");
             exit();
@@ -39,7 +43,8 @@ class Login_User {
     }
 
     // Função para redirecionar usuários que não são Investidores
-    public function Redirect_investidor() {
+    public function Redirect_investidor(): void
+    {
         if ($_SESSION['usuario']['status'] != "Investidor") {
             header("Location: ../");
             exit();

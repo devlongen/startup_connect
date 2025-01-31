@@ -1,8 +1,3 @@
-<?php 
-    session_start();
-    include_once("dist/php/count_startup.php");
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -48,7 +43,97 @@
     <!-- Topbar End -->
 
     <!-- Navbar & Carousel-->
-    <?php include('dist/php/navbar.php'); ?>
+    <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Startup Connect</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+            <li class="nav-item dropdown hidden-caret">
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false">
+                    <div class="avatar-sm">
+                        <img src="dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="90px" style="padding-top: 15px;" alt="..." class="avatar-img rounded-circle">
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                        <li>
+                            <div class="user-box">
+                                <div><img src="dist/img/User-Profile-PNG-Download-Image-1508492577.png" width="50px" alt="image profile" class="avatar-img rounded"></div>
+                                <div class="u-text">
+                                    <h4><?php echo $_SESSION['usuario']['nome']?></h4>
+                                    <p class="text-muted"><?php echo $_SESSION['usuario']['email']?></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?func=Perfil">Meu perfil</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?func=Logout">Logout</a>
+                        </li>
+                    </div>
+                </ul>
+            </li>
+                <a href="" class="nav-item nav-link active">Home</a>
+                <a href="pages/startups.php" class="nav-item nav-link">Startups</a>
+                <a href="pages/tela_login.php" class="nav-item nav-link">Login</a>
+
+                <div class="nav-item dropdown">
+
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Serviços</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="pages/cadastro_empresa.php" class="dropdown-item">Criar Startup</a>
+                        <a href="pages/projeto.php" class="dropdown-item">Quero investir</a>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </nav>
+
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="dist/img/carousel-1.jpg" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Você pode começar Agora</h5>
+                        <h1 class="display-1 text-white mb-md-4 animated zoomIn">Invista em negócios Promissores</h1>
+                        <a href="pages/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="pages/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="dist/img/carousel-2.jpg" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Criação e Inovação</h5>
+                        <h1 class="display-1 text-white mb-md-4 animated zoomIn">Conectando sua startup com investidores</h1>
+                        <a href="pages/cadastro_empresa.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Criar Startup</a>
+                        <a href="pages/projeto.php" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Quero investir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
 
 
 
@@ -92,7 +177,7 @@
                             <i class="fa fa-check text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="text-primary mb-0">Projetos cadastrados</h5>
+                            <h5 class="text-primary mb-0">Startups cadastrados</h5>
                             <h1 class="mb-0" data-toggle="counter-up"><?php echo $contador_empresa;?></h1>
                         </div>
                     </div>
@@ -103,7 +188,7 @@
                             <i class="fa fa-award text-primary"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="text-white mb-0">Projetos investidos</h5>
+                            <h5 class="text-white mb-0">Startups investidos</h5>
                             <h1 class="text-white mb-0" data-toggle="counter-up"><?php echo $contador_investidor;?></h1>
                         </div>
                     </div>
@@ -140,7 +225,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">Entre em contato conosco através de:</h5>
-                            <h4 class="text-primary mb-0">+55 47 4002-8922</h4>
+                            <h4 class="text-primary mb-0">+55 47 98807-1571</h4>
                         </div>
                     </div>
                     <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Enviar uma mensagem</a>
@@ -170,8 +255,8 @@
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-cubes text-white"></i>
                             </div>
-                            <h4>Segurança e Inovação</h4>
-                            <p class="mb-0">Estamos sempre buscando a melhor integridade para o seu negócio!</p>
+                            <h4>Inovação</h4>
+                            <p class="mb-0">Estamos sempre buscando inovar o seu negócio para às alturas!</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
@@ -193,15 +278,15 @@
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-users-cog text-white"></i>
                             </div>
-                            <h4>Suporte 24/7</h4>
-                            <p class="mb-0">Temos um setor totalmente especializado para cuidar do seu negócio, o quando e tempo que precisar!</p>
+                            <h4>Marketing</h4>
+                            <p class="mb-0">Temos um setor dedicado para impulsionar o seu negócio.</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-phone-alt text-white"></i>
                             </div>
                             <h4>Preços acessíveis</h4>
-                            <p class="mb-0">Possuímos os melhores preços do mercado para seu negócio crescer!</p>
+                            <p class="mb-0">Possuímos os melhores preços do mercado para seu negócio crescer sem te prejudicar!</p>
                         </div>
                     </div>
                 </div>
@@ -295,13 +380,13 @@
             <div class="row gx-5">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand">
+                        <a href="index.php" class="navbar-brand">
                             <h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i>Startup Connect</h1>
                         </a>
                         <p class="mt-3 mb-4">Para começar, crie a sua conta agora mesmo para ter acesso a diversas funcionalidades do nosso site!</p>
                         <form action="">
                             <div class="input-group">
-                                <button class="btn btn-dark" href="tela_login/tela_login.php">Criar Conta</button>
+                                <button class="btn btn-dark" href="pages/tela_login.php">Criar Conta</button>
                             </div>
                         </form>
                     </div>
@@ -314,15 +399,15 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">123, Joinville - SC, SENAI NORTE</p>
+                                <p class="mb-0">123, Joinville - SC</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">atendimento@startupconnect.com.br</p>
+                                <p class="mb-0">iago.mendonca_2005@hotmail.com</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">+55 47 4022-8922</p>
+                                <p class="mb-0">+55 47 98807-1571</p>
                             </div>
                             <div class="d-flex mt-4">
                                 <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
@@ -341,12 +426,9 @@
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6">
                     <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Startup Connect</a>. Todos direitos reservados.
-
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Projeto por <a class="text-white border-bottom">Time Dev</a>
+                        <p class="mb-0">&copy;Todos direitos reservados e
+                            desenvolvido por <a class="text-white border-bottom" href="https:/github.com/devlongen" target="_blank">devlongen</a>
                         </p>
-                        <br>Distribuido por: <a class="border-bottom">Time Dev</a>
                     </div>
                 </div>
             </div>

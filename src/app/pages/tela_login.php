@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../lib/plugins/plugins_login/style.css">
     <title>Tela Login</title>
 </head>
 
@@ -16,7 +16,6 @@
                 <h1>Criar uma conta</h1>
                 <input type="text" placeholder="Nome" name="nome_insert_db" required="true">
                 <input type="email" placeholder="Email" name="email_insert_db" required="true" oninput="validacaoEmail(this)">
-                <input type="text" placeholder="CPF" id="" name="cpf_insert_db" required="true" minlength="14" maxlength="14" oninput="formatCPF(this)">
                 <input type="password" placeholder="Senha" name="senha_insert_db" required="true" minlength="8">
                 <input type="number" placeholder="Telefone" name="telefone_insert_db" required="true"  oninput="limitCharacters(this, 11)">
                 <input type="date" max="2005-12-31" name="data_de_nascimento_insert_db" required="true">
@@ -49,8 +48,7 @@
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="../lib/plugins/plugins_login/script.js"></script>
 </body>
 
 </html>

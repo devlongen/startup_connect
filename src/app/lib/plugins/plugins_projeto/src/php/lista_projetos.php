@@ -1,5 +1,5 @@
 <?php
-include_once("conexao_projetos.php");
+include_once("../../../conn.php");
 
 function getProjetos($conexao)
 {
