@@ -1,10 +1,9 @@
 version: '3.8'
 
 services:
-
   nginx:
     image: nginx:latest
-    container_name: meu_nginx
+    container_name: nginxStartup
     ports:
       - "8080:80"  
     volumes:
@@ -13,19 +12,28 @@ services:
     depends_on:
       - php
       - db
-db:
+
+  php:
+    build: .
+    container_name: phpStartup
+    volumes:
+      - ./src:/github/startup_connect/
+    expose:
+      - "9000"
+    depends_on:
+      - db
+
+  db:
     image: mysql:8.0
     container_name: database
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: startup_connect
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:github/startup_connect/sql/
+      - mysql_data:/var/lib/mysql/
 
 volumes:
   mysql_data:
