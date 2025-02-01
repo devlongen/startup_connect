@@ -12,23 +12,25 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="backend/function/insert_&&_verify.php" method="post" name="cadastro_db">
+            <form action="../lib/plugins/plugins_login/php/registerUser.php" method="post" name="userData">
                 <h1>Criar uma conta</h1>
-                <input type="text" placeholder="Nome" name="nome_insert_db" required="true">
-                <input type="email" placeholder="Email" name="email_insert_db" required="true" oninput="validacaoEmail(this)">
-                <input type="password" placeholder="Senha" name="senha_insert_db" required="true" minlength="8">
-                <input type="number" placeholder="Telefone" name="telefone_insert_db" required="true"  oninput="limitCharacters(this, 11)">
-                <input type="date" max="2005-12-31" name="data_de_nascimento_insert_db" required="true">
-                <input type="radio" name="tipo_usuario_db" value="Fundador" id="tipo_usuario" required="true">Fundador 
-                <input type="radio" name="tipo_usuario_db" value="Investidor" id="tipo_usuario" required="true">Investidor 
-                <button href="../app/index.php" name="cadastro_db">Criar</button>
+                <input type="text" placeholder="Nome" name="userData[]" required="true">
+                <input type="email" placeholder="Email" name="userData[]" required="true"
+                    oninput="validacaoEmail(this)">
+                <input type="password" placeholder="Senha" name="userData[]" required="true" minlength="8">
+                <input type="number" placeholder="Telefone" name="userData[]" required="true"
+                    oninput="limitCharacters(this, 11)">
+                <input type="date" max="2005-12-31" name="userData[]" required="true">
+                <input type="radio" name="userData[5]" value="Fundador" id="tipo_usuario" required="true">Fundador
+                <input type="radio" name="userData[5]" value="Investidor" id="tipo_usuario" required="true">Investidor
+                <button type="submit">Criar</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="backend/function/insert_&&_verify.php" method="post" name="login_db">  
+            <form action="../lib/plugins/plugins_login/php/loginUser.php" method="post" name="userAcess">
                 <h1>Entrar</h1>
-                <input type="email" placeholder="Email" name="email_login_db" required="true">
-                <input type="password" placeholder="Senha" name="senha_login_db" required="true">
+                <input type="email" placeholder="Email" name="userAcess[]" required="true">
+                <input type="password" placeholder="Senha" name="userAcess[]" required="true">
                 <a href="#">Esqueceu sua senha?</a>
                 <button name="login_db">Entrar</button>
             </form>

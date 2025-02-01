@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   nginx:
     image: nginx:latest
@@ -22,6 +20,8 @@ services:
       - "9000"
     depends_on:
       - db
+    command: >
+      sh -c "docker-php-ext-install mysqli && php-fpm"
 
   db:
     image: mysql:8.0
