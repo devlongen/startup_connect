@@ -1,4 +1,6 @@
 <?php
+require_once('saveSession.php');
+require_once('redirectUser.php');
 $conn = require_once('../../conn.php');
 $userData = $_POST['userData'];
 if ($_SERVER['REQUEST_METHOD'] === "POST" and $userData != null) {
@@ -16,10 +18,11 @@ function insertUser($conn, $userData): void
     mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $password, $tel, $dtNasc, $status);
 
     if (mysqli_stmt_execute($stmt)) {
-        echo "Usuário inserido com sucesso!";
+        rtypeUser($conn,$email);
     } else {
         echo "Erro ao inserir usuário: " . mysqli_stmt_error($stmt);
     }
 
     mysqli_stmt_close($stmt);
+    saveSession($name, $email);
 }
